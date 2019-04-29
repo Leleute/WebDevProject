@@ -1,19 +1,35 @@
+		h1
+	{
+		font-size: 40px;
+  text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #white;
+  padding:16px;
+  font-weight:lighter;
+  text-align:center;
+  display:block;
+  margin:16px;
+
+}
+
+
 		#header{
-			background-color:black;
+			background-image:url(paris2.jpg);	
+			background-color:paris.jpg;
 			color: white;
 			text-align: center;
-			padding: 5px;
+			padding: 15px;
 		}
 		#nav{
 			line-height: 30px;
-			background-color: #eeeeee;
+			background-color: #CBCFD1;
 			height: 500px;
-			width: 150px;
+			width: 130px;
 			float: left;
 			padding: 5px;
 		}
 		#section{
-			background-color: #cccccc;
+			background-color: #D2E1E8;
 			width: auto
 			float: left;
 			padding: 5px;
@@ -26,7 +42,42 @@
 			text-align: center;
 			padding: 10px;
 		}
-		.city{
-			float: left;
-			padding-right: 30px;
+		.account{
+			
+			position: absolute;
+			top: 10px;
+			left: 1210px;
+			width : 35px; 
+			height: 35px;
+			
+		}
+
+		.basket{
+			
+			position: absolute;
+			top: 45px;
+			left: 1210px;
+			width : 35px; 
+			height: 35px;
+			
+		}
+		
+		.ece{
+			
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			width : 140px; 
+			height: 140px;
+			
+		}
+		
+		/*.sandales{
+			
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			width : 140px; 
+			height: 140px;
+			
 		}
