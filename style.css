@@ -23,7 +23,7 @@
 		#nav{
 			line-height: 30px;
 			background-color: #CBCFD1;
-			height: 500px;
+			height: 2000px;
 			width: 130px;
 			float: left;
 			padding: 5px;
@@ -33,7 +33,7 @@
 			width: auto
 			float: left;
 			padding: 5px;
-			height: 500px;
+			height: 2000px;
 		}
 		#footer{
 			background-color: black;
@@ -52,7 +52,7 @@
 			
 		}
 
-		.basketHFG{
+		.basket{
 			
 			position: absolute;
 			top: 45px;
@@ -75,9 +75,29 @@
 		.sandale{
 			
 			position: absolute;
-			top: 2868px;
-			left: 343px;
-			width : 140px; 
-			height: 140px;
+			top: 218px;
+			left: 315px;
+			/*width : 750px; 
+			height: 440px;*/
+			
+		}
+		
+		.theatre{
+			
+			position: absolute;
+			top: 818px;
+			left: 515px;
+			width : 440px; 
+			height: 750px;*/
+			
+		}
+		
+		.tv{
+			
+			position: absolute;
+			top: 1618px;
+			left: 415px;
+			/*width : 440px; 
+			height: 750px;*/
 			
 		}
