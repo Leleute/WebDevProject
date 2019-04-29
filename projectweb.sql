@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 29 avr. 2019 à 08:50
+-- Généré le :  lun. 29 avr. 2019 à 09:02
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -25,21 +25,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `item`
+-- Structure de la table `items`
 --
 
-DROP TABLE IF EXISTS `item`;
-CREATE TABLE IF NOT EXISTS `item` (
-  `ID` int(11) NOT NULL
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE IF NOT EXISTS `items` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom` varchar(255) NOT NULL,
+  `AdresseImage` varchar(255) NOT NULL,
+  `Prix` float NOT NULL,
+  `Categorie` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `item`
---
-
-INSERT INTO `item` (`ID`) VALUES
-(1),
-(2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
