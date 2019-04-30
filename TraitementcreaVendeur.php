@@ -1,39 +1,47 @@
 <?php
-
-var_dump(_FILES);
-$dossier = 'upload/';
-$fichier = basename($_FILES['avatar']['name']);
-$taille_maxi = 100000;
-$taille = filesize($_FILES['avatar']['tmp_name']);
-$extensions = array('.png', '.jpg', '.jpeg');
-$extension = strrchr($_FILES['avatar']['name'], '.'); 
-//Début des vérifications de sécurité...
-if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
-{
-     $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
+var_dump($_FILES);
+//"images" = subdirectory for images in www directory
+$target_dir = "images/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+//file extension in lower case
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+// Vérifier si le fichier image est une image réelle ou une image fausse
+if(isset($_POST["button1"])) {
+ $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+ if($check !== false) {
+ echo "Le fichier est une image - " . $check["mime"] . ".";
+ $uploadOk = 1;
+ } else {
+ echo "Le fichier n'est pas une image.";
+ $uploadOk = 0;
+ }
 }
-if($taille>$taille_maxi)
-{
-     $erreur = 'Le fichier est trop gros...';
+// Vérifier la taille du fichier
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+ echo "<br>" . "Désolé, votre fichier est trop volumineux.";
+ $uploadOk = 0;
 }
-if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
-{
-     //On formate le nom du fichier ici...
-     $fichier = strtr($fichier, 
-          'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-          'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-     $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-     if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
-     {
-          echo 'Upload effectué avec succès !';
-     }
-     else //Sinon (la fonction renvoie FALSE).
-     {
-          echo 'Echec de l\'upload !';
-     }
+// Autoriser certains formats de fichier
+if (($imageFileType == "jpg") || ($imageFileType == "png") || ($imageFileType == "jpeg")
+ || ($imageFileType == "gif")) {
+ echo "<br>" . "Fichier autorisé. Format = JPG | JPEG| PNG | GIF.";
+ $uploadOk = 1;
+} else {
+ echo "<br>" . "Désolé. Seuls fichiers en format JPG, JPEG, PNG, GIF sont autorisés.";
+ $uploadOk = 0;
 }
-else
-{
-     echo $erreur;
+// Vérifiez si $uploadOk est défini comme 0 par une erreur
+if ($uploadOk == 0) {
+ echo "<br>" . "Désolé, votre fichier n'a pas été téléchargé.";
+// si tout est correct, télécharger le fichier
+} else {
+ if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+ echo "<br>" . "Le fichier ". basename( $_FILES["fileToUpload"]["name"]). " a été
+téléchargé.";
+ } else {
+ echo "<br>" . "Désolé, une erreur s'est produite lors de l'envoi de votre
+fichier.";
+ }
 }
 ?>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Télécharger un fichier</title>
+		<meta charset="utf-8">
+	</head>
+<body>
+<h2>Téléchargement d'un fichier</h2>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Pseudo :</td>
+            <td><input type="text" name="pseudo"></td>
+        </tr>
+        <tr>
+            <td>Email :</td>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <td>Selectionner votre photo de profil ::</td>
+            <td><input type="file" name="fileToUpload1"></td>
+        </tr>
+        <tr>
+            <td>Sélectionner votre Photo de couverture : </td>
+            <td><input type="file" name="fileToUpload2"></td>
+        </tr>
+        <tr>
+            <td>Nom :</td>
+            <td><input type="text" name="nom"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" name="button2" value="Créez votre compte">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
