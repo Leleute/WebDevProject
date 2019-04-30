@@ -51,7 +51,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 
 
 			<?php
-			$database = "projectweb";
+			$database = "projet-amazon";
 			$db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
@@ -69,17 +69,23 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			 <div class="col-md-4">
 <div class="thumbnail">
 <a href="<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
-<img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;">
+<img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;"><br><br>
 </a>
+
 <div class="caption">
 <h2><?php echo $donnees['Nom']; ?></h2>
-<ul>
-<li>Prix : <?php echo $donnees['Prix']; ?></li>
-<li>Artiste : <?php echo $donnees['Artiste']; ?></li>
-<li>Label : <?php echo $donnees['Label']; ?></li>
-<li>Date : <?php echo $donnees['Date']; ?></li>
-</ul>
-<p> <?php echo $donnees['Description']; ?></p>
+
+Prix : <?php echo $donnees['Prix']; ?> <br>
+Artiste : <?php echo $donnees['Artiste']; ?> <br>
+Label : <?php echo $donnees['Label']; ?> <br>
+Date : <?php echo $donnees['Date']; ?> <br>
+
+<a  href="<?php echo $donnees['AdresseVideo']; ?>" target="_blank"> <br>
+<video width="240"  height="160" src="<?php echo $donnees['AdresseVideo']; ?>"  controls autobuffer>
+
+</video>
+</a>
+<p> <?php echo $donnees['Description']; ?></p> 
  			<FORM>
 			<input class="BoutonAjoutPanier"
 			 type="button"

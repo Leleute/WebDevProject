@@ -18,8 +18,6 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </head>
 
 <body>
-	<form action = "panier1.php" method="post">
-
 	<div id="header">
 		<h1>BIENVENUE A ECE AMAZON </h1>
 			<img class="account" src="account.png" width="30" height="30">
@@ -45,45 +43,23 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 
 		<center>
 		
-			<p style="background-color: white; color: #469533;  font-size: 200%;">Livres</p>
+			<p style="background-color: white; color: #469533;  font-size: 200%;">Musique</p>
 			<a href= "interface-site.html"> 
 				<img class="home" src="home.png">
 			</a>
-
-
-
-			
-
-		</center> 
+		</center>
+	
+	
+			 
+			 
+			 
+			 
 	</div>
 		
 	<div id="footer">
 		Droit d'auteur | Copyright &copy; 2019, ECE AMAZON 
 	</div>
 
-
-<?php
-			$database = "projet-amazon";
-			$db_handle = mysqli_connect('localhost', 'root', '');
-            $db_found = mysqli_select_db($db_handle, $database);
-            if ($db_found)
-             {
-            $sql = "SELECT * FROM livres";
-            $result = mysqli_query($db_handle, $sql);
-
-            while ($donnees = mysqli_fetch_assoc($result))
-            {
-            	
-            	echo "ID: " . $donnees['Nom'];
-            
-            }
-            	
-        }
-        else {
-echo "Database not found";
-}
-mysqli_close($db_handle);
-?>
 
 
 

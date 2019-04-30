@@ -36,7 +36,7 @@ function MontantGlobal(){
    $total=0;
    for($i = 0; $i < count($_SESSION['panier']['ID']); $i++)
    {
-      $total +=  $_SESSION['panier']['PRIX'][$i];
+      $total +=  $_SESSION['panier']['Prix'][$i];
    }
    return $total;
 }
