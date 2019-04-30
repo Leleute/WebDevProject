@@ -44,7 +44,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 		<center>
 		
 			<p style="background-color: white; color: #469533;  font-size: 200%;">Sports et loisirs</p>
-			<a href= "interface-site.html"> 
+			<a href= "interface-site.php"> 
 				<img class="home" src="home.png">
 			</a>
 			<?php
