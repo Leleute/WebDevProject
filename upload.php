@@ -10,7 +10,7 @@ if ($_POST["button2"])
 {
 	if ($db_found) 
 	{
-		$sql = "SELECT * FROM acheteur";
+		$sql = "SELECT * FROM vendeur";
 		if ($email != "") {
 			$sql .= " WHERE Email LIKE '%$email%'";
 			if ($pseudo != "") {
