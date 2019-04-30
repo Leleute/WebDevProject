@@ -60,14 +60,34 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
             while ($donnees = mysqli_fetch_assoc($result))
             {
             	?>
-            	 <img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>">
-            	 <br><br>
-            	 <FORM>
+            	 
+            	 
+            	
+			 
+			 <div class="col-md-4">
+<div class="thumbnail">
+<a href="<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
+<img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;">
+</a>
+<div class="caption">
+<h2><?php echo $donnees['Nom']; ?></h2>
+<ul>
+<li>Prix : <?php echo $donnees['Prix']; ?></li>
+<li>Auteur : <?php echo $donnees['Auteur']; ?></li>
+<li>Editeur : <?php echo $donnees['Editeur']; ?></li>
+<li>Date : <?php echo $donnees['Date']; ?></li>
+</ul>
+<p> <?php echo $donnees['Description']; ?></p>
+ <FORM>
 			<input class="BoutonAjoutPanier"
 			 type="button"
 			 value="Ajouter au Panier">
 			 </FORM>
-			 <br><br><br>
+</div>
+
+</div>
+</div>
+<br><br><br>
 
             <?php
 
