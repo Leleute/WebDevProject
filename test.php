@@ -61,11 +61,13 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
             {
             	?>
             	 <img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>">
-            	
-			<input class="styled"
+            	 <br><br>
+            	 <FORM>
+			<input class="BoutonAjoutPanier"
 			 type="button"
-			 value="Passer la commande">
-			 
+			 value="Ajouter au Panier">
+			 </FORM>
+			 <br><br><br>
 
             <?php
 
