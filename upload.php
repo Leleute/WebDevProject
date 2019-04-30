@@ -152,6 +152,8 @@ if ($_POST["button2"])
 				VALUES (NULL, '$pseudo', '$email', '$pdp', '$pdc', '$nom')";
 				$result = mysqli_query($db_handle, $sql);
 			/// Affichage de la reussite !!
+
+
 			 echo '<p><a href="http://www.google.fr">lien</a></p>';;
 				
 			}
