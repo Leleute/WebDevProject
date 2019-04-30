@@ -32,7 +32,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	<div id="nav">
 	
 		<ul>
-			<li> <a href= "Livre.html"> Livre </a> </li>
+			<li> <a href= "test.php"> Livre </a> </li>
 			<li> <a href= "Musique.html"> Musique </a> </li>
 			<li> <a href= "vetementH.html"> Vetements HOMME </a> </li>
 			<li> <a href= "vetementF.html"> Vetements FEMME </a> </li>
@@ -48,6 +48,36 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 				<img class="home" src="home.png">
 			</a>
 
+			<?php
+			$database = "projectweb";
+			$db_handle = mysqli_connect('localhost', 'root', '');
+            $db_found = mysqli_select_db($db_handle, $database);
+            if ($db_found)
+             {
+            $sql = "SELECT * FROM livres";
+            $result = mysqli_query($db_handle, $sql);
+
+            while ($donnees = mysqli_fetch_assoc($result))
+            {
+            	?>
+            	 <img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>">
+            	
+			<input class="styled"
+			 type="button"
+			 value="Passer la commande">
+			 
+
+            <?php
+
+            }
+            	
+        }
+        else {
+echo "Database not found";
+}
+mysqli_close($db_handle);
+?>
+
 
 
 			
@@ -60,28 +90,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	</div>
 
 
-<?php
-			$database = "projectweb";
-			$db_handle = mysqli_connect('localhost', 'root', '');
-            $db_found = mysqli_select_db($db_handle, $database);
-            if ($db_found)
-             {
-            $sql = "SELECT * FROM livres";
-            $result = mysqli_query($db_handle, $sql);
 
-            while ($donnees = mysqli_fetch_assoc($result))
-            {
-            	
-            	echo "ID: " . $donnees['Nom'];
-            
-            }
-            	
-        }
-        else {
-echo "Database not found";
-}
-mysqli_close($db_handle);
-?>
 
 
 
