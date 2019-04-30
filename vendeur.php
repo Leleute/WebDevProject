@@ -15,7 +15,6 @@
 	</style>
 </head>
 <body>
-	<!--
 	<?php
 	$vendeurID = 12;
 	$database = "projectweb";
@@ -33,12 +32,124 @@
 			echo $data['Email'] . "<br>";
 			echo $data['Pseudo'] . "<br>";
 			?>
-	<img class="PdP" src="images/v <?php echo $data['PdP']; ?>" style = "width: 50%;">
+	<img class="PdP" src="images/<?php echo $data['PdP']; ?>" style = "width: 50%;">
+	<<img class="PdP" src="images/<?php echo $data['PdC']; ?>" style = "width: 50%;">
 	<?php
 		}
 	}
-	?>-->
-	
+	?>
+	 <div class="row">  
+        <div class="col-sm-3"> 
+        	<h4>Livres</h4>
+
+	<?php
+	$vendeurID =12;
+	$database = "projectweb";
+	$db_handle = mysqli_connect('localhost', 'root', '');
+	$db_found = mysqli_select_db($db_handle, $database);
+
+	if ($db_found) 
+	{
+		$sql = "SELECT * FROM livres";
+		$sql .= " WHERE IDvendeur LIKE '%$vendeurID%'";
+		$result = mysqli_query($db_handle, $sql);
+		while ($data = mysqli_fetch_assoc($result)) {
+			echo $data['Nom']. "<br>";
+			echo $data['Prix'] . "<br>";
+			echo $data['Auteur'] . "<br>";
+			echo $data['Editeur'] . "<br>";
+			echo $data['Date'] . "<br>";
+			echo $data['Description'] . "<br>";
+			?>
+	<img class="PdP" src="imageslivres/<?php echo $data['AdressePhoto']; ?>" style = "width: 50%;">
+	<?php
+		}
+	}
+	?>
+
+
+       </div>
+       <div class="col-sm-3"> 
+       	<h4>Musiques</h4>
+       	<?php
+	$vendeurID =12;
+	$database = "projectweb";
+	$db_handle = mysqli_connect('localhost', 'root', '');
+	$db_found = mysqli_select_db($db_handle, $database);
+
+	if ($db_found) 
+	{
+		$sql = "SELECT * FROM musiques";
+		$sql .= " WHERE IDvendeur LIKE '%$vendeurID%'";
+		$result = mysqli_query($db_handle, $sql);
+		while ($data = mysqli_fetch_assoc($result)) {
+			echo $data['Nom']. "<br>";
+			echo $data['Prix'] . "<br>";
+			echo $data['Artiste'] . "<br>";
+			echo $data['Label'] . "<br>";
+			echo $data['Date'] . "<br>";
+			echo $data['Description'] . "<br>";
+			?>
+	<img class="PdP" src="imagesmusiques/<?php echo $data['AdressePhoto']; ?>" style = "width: 50%;">
+	<?php
+		}
+	}
+	?>
+       </div>
+
+       <div class="col-sm-3"> 
+       	<h4>Vos sports et Loisirs</h4>
+       	<?php
+	$vendeurID =12;
+	$database = "projectweb";
+	$db_handle = mysqli_connect('localhost', 'root', '');
+	$db_found = mysqli_select_db($db_handle, $database);
+
+	if ($db_found) 
+	{
+		$sql = "SELECT * FROM sportetloisir";
+		$sql .= " WHERE IDvendeur LIKE '%$vendeurID%'";
+		$result = mysqli_query($db_handle, $sql);
+		while ($data = mysqli_fetch_assoc($result)) {
+			echo $data['Nom']. "<br>";
+			echo $data['Prix'] . "<br>";
+			echo $data['Description'] . "<br>";
+			?>
+	<img class="PdP" src="imagessetl/<?php echo $data['AdressePhoto']; ?>" style = "width: 50%;">
+	<?php
+		}
+	}
+	?>
+       </div>
+
+       <div class="col-sm-3"> 
+       	<h4>Vetements</h4>
+       	<?php
+	$vendeurID =12;
+	$database = "projectweb";
+	$db_handle = mysqli_connect('localhost', 'root', '');
+	$db_found = mysqli_select_db($db_handle, $database);
+
+	if ($db_found) 
+	{
+		$sql = "SELECT * FROM vetement";
+		$sql .= " WHERE IDvendeur LIKE '%$vendeurID%'";
+		$result = mysqli_query($db_handle, $sql);
+		while ($data = mysqli_fetch_assoc($result)) {
+			echo $data['Nom']. "<br>";
+			echo $data['Prix'] . "<br>";
+			echo $data['Taille'] . "<br>";
+			echo $data['Sexe'] . "<br>";
+			echo $data['Couleur'] . "<br>";
+			echo $data['Description'] . "<br>";
+			?>
+	<img class="PdP" src="imagesvetement/<?php echo $data['AdressePhoto']; ?>" style = "width: 50%;">
+	<?php
+		}
+	}
+	?>
+       </div>
+
 
 </body>
 </html>
