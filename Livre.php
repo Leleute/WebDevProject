@@ -49,7 +49,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			</a>
 
 			<?php
-			$database = "projectweb";
+			$database = "projet-html";
 			$db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
@@ -78,10 +78,14 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 <li>Date : <?php echo $donnees['Date']; ?></li>
 </ul>
 <p> <?php echo $donnees['Description']; ?></p>
- 			<FORM>
-			<input class="BoutonAjoutPanier"
+ 			
+			<FORM>
+			<input class="BoutonAjoutPanier" formaction='panier1.php'
 			 type="button"
 			 value="Ajouter au Panier">
+			<input type="hidden" name="ID" value="<?php echo $donnees['ID'];?>">
+		
+		
 			</FORM>
 </div>
 
