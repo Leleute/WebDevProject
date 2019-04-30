@@ -1,5 +1,6 @@
 <?php
 $nom = isset($_POST["nom"])? $_POST["nom"] : "";
+
 $prenom = isset($_POST["prenom"])? $_POST["prenom"] : "";
 $email = isset($_POST["email"])? $_POST["email"] : "";
 $login = isset($_POST["login"])? $_POST["login"] : "";
@@ -12,11 +13,12 @@ $pays = isset($_POST["pays"])? $_POST["pays"] : "";
 $tel = isset($_POST["tel"])? $_POST["tel"] : "";
 $typeC = isset($_POST["typeC"])? $_POST["typeC"] : "";
 
-// echo "$typeC";
+ // echo "$typeC"; 
 $numC = isset($_POST["numC"])? $_POST["numC"] : "";
 $nomC = isset($_POST["nomC"])? $_POST["nomC"] : "";
 $dateC = isset($_POST["dateC"])? $_POST["dateC"] : "";
 $codeC = isset($_POST["codeC"])? $_POST["codeC"] : "";
+
 
 $database = "projectweb"; 
 
@@ -27,7 +29,7 @@ if ($_POST["button2"]) {
 if ($db_found) {
 $sql = "SELECT * FROM acheteur";
 if ($email != "") {
-//on cherche le livre avec les paramètres titre et auteur
+//on cherche l'acheteur avec les paramètres titre et auteur
 $sql .= " WHERE Email LIKE '%$email%'";
 if ($login != "") {
 $sql .= " OR Login LIKE '%$login%'";
@@ -40,21 +42,24 @@ if (mysqli_num_rows($result1) != 0) {
 echo "Un utilisateur utilise deja cette adresse Email ou se pseudo, veuillez en changer";
 } 
 $result2 = 0;
+    
+    
 if($nom == "" || $prenom == "" || $login == "" || $mdp == "" || $adr1 == "" || $ville == "" || $codePostal == "" || $pays == "" || $tel == "" || $typeC == "" || $numC == "" || $nomC == "" || $dateC == "" || $codeC == "" ) {
 	$result2 = 1;
-	echo "Il y a au moins un des composants obligatoires de vide";
+	echo "Un des champs est vide ";
 }
 
+    
 
 if(mysqli_num_rows($result1) == 0 && $result2 == 0) {
 $sql = "INSERT INTO acheteur(ID, Nom, Prenom, Email, Login, MdP, Adresse1, Adresse2, Ville, CodePostal, Pays, Tel, TypeCarte, NumCarte, NomCarte, DateExpi, CodeSecu)
 VALUES (NULL, '$nom', '$prenom', '$email', '$login', '$mdp', '$adr1', '$adr2', '$ville', '$codePostal', '$pays', '$tel', '$typeC', '$numC', '$nomC', '$dateC', '$codeC')";
 $result = mysqli_query($db_handle, $sql);
-echo "Ajout reussit !." . "<br>";
- //on affiche le livre ajouté
+echo "Ajout reussit !" . "<br>";
+ //on affiche l'acheteur ajouté
 $sql = "SELECT * FROM acheteur";
 if ($login != "") {
-//on cherche le livre avec les paramètres titre et auteur
+//on cherche l'cheteur avec les paramètres titre et auteur
 $sql .= " WHERE Login LIKE '%$login%'";
 if ($email != "") {
 $sql .= " AND Email LIKE '%$email%'";
