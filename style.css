@@ -28,7 +28,16 @@
 			float: left;
 			padding: 5px;
 		}
-		#section{
+
+#wrapper { width: 680px;
+ min-width: 680px;
+ margin: 0 auto;
+ color: #003300;
+ padding-left: 10px;
+
+}
+
+	#section{
 			background-color: #D2E1E8;
 			width: auto
 			float: left;

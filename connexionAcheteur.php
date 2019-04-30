@@ -5,8 +5,7 @@ $mdp = isset($_POST["mdp1"])?$_POST["mdp1"] : "";
 
 $database = " projectweb"; 
 
-$db_found = mysqli_connect('localhost:8889','root','root','projectweb')
- or die('Error connecting to MySQL server.');
+$db_found = 
     
 $erreur = ""; 
 
@@ -19,33 +18,14 @@ $erreur .=" Le champ Mot de Passe est vide . <br> ";
 }
 
 
-/// si la base de donné existe faire 
+if ( $erreur == ""){ 
 
-if($db_found) { 
-
-    $sql = "SELECT * FROM acheteur"; 
-    $result = mysqli_query($db_handle, $sql);
- while ($data = mysqli_fetch_assoc($result))
- {
-     $login= $data['login']; 
-     $mdp= $data['mdp'];
-
+    echo " Connexion reussie " ; 
 }
-if ( $login1== $login && $mdp1== $mdp ) {
-    
-    echo " Conexxion acceptee"
-    
+else { 
+echo " Erreur de connexion" ; 
 }
-    else { echo " Erreur de connexion "}
-
-   
-    
-}
- 
-    else { echo " Database not found " ; 
-         }
- 
 /// fermer la connexion 
 
-mysqli_close( $db_handle); 
+
 ?> 
