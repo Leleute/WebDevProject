@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 30 avr. 2019 à 14:43
+-- Généré le :  mer. 01 mai 2019 à 10:38
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -33,13 +33,14 @@ CREATE TABLE IF NOT EXISTS `acheteur` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Nom` varchar(255) NOT NULL,
   `Prenom` varchar(255) NOT NULL,
+  `AdressePhoto` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `Login` varchar(255) NOT NULL,
-  `MdP` varchar(255) NOT NULL,
+  `Mdp` varchar(255) NOT NULL,
   `Adresse1` varchar(255) NOT NULL,
   `Adresse2` varchar(255) NOT NULL,
   `Ville` varchar(255) NOT NULL,
-  `CodePostal` int(11) NOT NULL,
+  `CodePostale` int(11) NOT NULL,
   `Pays` varchar(255) NOT NULL,
   `Tel` int(11) NOT NULL,
   `TypeCarte` varchar(255) NOT NULL,
@@ -48,21 +49,15 @@ CREATE TABLE IF NOT EXISTS `acheteur` (
   `DateExpi` varchar(255) NOT NULL,
   `CodeSecu` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `acheteur`
 --
 
-INSERT INTO `acheteur` (`ID`, `Nom`, `Prenom`, `Email`, `Login`, `MdP`, `Adresse1`, `Adresse2`, `Ville`, `CodePostal`, `Pays`, `Tel`, `TypeCarte`, `NumCarte`, `NomCarte`, `DateExpi`, `CodeSecu`) VALUES
-(1, '1', '1', '1', '1', '1', '1', '1', '1', 1, '1', 1, '1', '1', '1', '2019-04-16', 1),
-(2, '2', '2', '2', '2', '2', '2', '2', '2', 2, '2', 2, '2', '2', '2', '2019-04-16', 2),
-(3, '3', '3', '3', '3', '3', '3', '3', '3', 3, '3', 3, '3', '3', '3', '3', 3),
-(4, '3', '3', '4', '4', '3', '3', '3', '3', 3, '3', 3, '3', '3', '3', '3', 3),
-(5, '3', '3', '5', '5', '3', '3', '3', '3', 3, '3', 3, '3', '3', '3', '3', 3),
-(6, '3', '3', '6', '6', '3', '3', '3', '3', 3, '3', 3, '3', '3', '3', '3', 3),
-(7, 'dsqdsqf', 'qsdsq', 'qsddsq', 'qsdsqd', 'qsdsqd', 'sqdqs', 'sdqsd', 'dsqdqs', 923, 'dsqdq', 123, 'fsqdqs', 'qsdsdq', 'qsdsdq', 'qdsdqsdsq', 1243),
-(8, 'mart', 'dqs', 'dqsqsza', 'azeezza', 'azeaazea', 'azeaze', 'az', 'azeara', 132, 'dsqdsq', 1233, 'fds', '3221', 'qsdq', '2019-04-17', 123);
+INSERT INTO `acheteur` (`ID`, `Nom`, `Prenom`, `AdressePhoto`, `Email`, `Login`, `Mdp`, `Adresse1`, `Adresse2`, `Ville`, `CodePostale`, `Pays`, `Tel`, `TypeCarte`, `NumCarte`, `NomCarte`, `DateExpi`, `CodeSecu`) VALUES
+(1, 'Dupont', 'Nicolas', 'Dupont_Nicolas.jpg', 'nicolas.dupont@gmail.com', 'Nico12', 'Nicooo', '13 avenue des peupliers', 'Pas', 'Antony', 92160, 'France', 645782347, 'Visa', '78624656652087214', 'Dupont Nicolas', '2024-02-09', 789),
+(2, 'Forestu', 'Clara', 'clara.jpg', 'clara.forestu@gmail.com', 'clara29', 'Clarafo', '5 avenue des roses', '', 'Paris 5eme arrondissement', 75005, 'France', 745761214, 'Visa', '78628648901757', 'Clara Forestu', '2020-05-29', 142);
 
 -- --------------------------------------------------------
 
@@ -90,8 +85,8 @@ CREATE TABLE IF NOT EXISTS `livres` (
 --
 
 INSERT INTO `livres` (`ID`, `Nom`, `Prix`, `AdressePhoto`, `AdresseVideo`, `Description`, `Auteur`, `Editeur`, `Date`, `IDvendeur`) VALUES
-(1, 'a', 1, 'a', '', 'a', 'a', 'a', '2019-04-09', 0),
-(2, 'b', 2, 'b', NULL, 'b', 'b', 'b', '2019-04-17', 0);
+(1, 'L\'imagier a toucher de petit ours', 12, 'petitours.jpg', 'https://www.youtube.com/watch?v=Mh2ZUxBgBo8', 'Livre pour enfant', 'Louis Zalon', 'Bayard Edition', '2016-11-14', 1),
+(2, 'Michel Strogoff', 20, 'jules-vernes.jpeg', 'https://www.youtube.com/watch?v=hkrqhv55pe4', 'Les provinces sibériennes de la Russie sont envahies par des hordes tartares dont Ivan Ogareff est l\'âme', 'Jules Verne', 'Le Livre de Poche', '1974-11-16', 2);
 
 -- --------------------------------------------------------
 
@@ -119,8 +114,8 @@ CREATE TABLE IF NOT EXISTS `musiques` (
 --
 
 INSERT INTO `musiques` (`ID`, `Nom`, `Prix`, `AdressePhoto`, `AdresseVideo`, `Description`, `Artiste`, `Label`, `Date`, `IDvendeur`) VALUES
-(1, 'a', 1, 'a', NULL, 'a', 'a', 'a', '2019-04-09', 0),
-(2, 'b', 2, 'b', NULL, 'b', 'b', 'b', '2019-04-12', 0);
+(1, 'Father of 4', 19, 'offset.jpg', 'https://www.youtube.com/watch?v=gvbmVRYq5U8', 'Offset grand rappeur americain sort son album attendu par tous Father of 4', 'Offset', 'NIST', '2019-03-11', 3),
+(2, 'Destin', 9, 'destin.jpg', 'https://www.youtube.com/watch?v=0uLp-tejcSo', '3eme album de Ninho Rap', 'Ninho', 'Rec 118', '2019-02-12', 1);
 
 -- --------------------------------------------------------
 
@@ -145,8 +140,8 @@ CREATE TABLE IF NOT EXISTS `sportetloisir` (
 --
 
 INSERT INTO `sportetloisir` (`ID`, `Nom`, `Prix`, `AdressePhoto`, `AdresseVideo`, `Description`, `IDvendeur`) VALUES
-(1, '1', 1, '1', NULL, '1', 0),
-(2, '2', 2, '2', NULL, '2', 0);
+(1, 'Neoness', 30, 'neoness.jpg', 'https://www.youtube.com/watch?v=Y3BeX21wago', '30 euros par mois et pour un abonnement annuel 2 mois d\'etes sont offerts!', 1),
+(2, 'Le Misanthrope', 25, 'theatre.png', 'https://www.youtube.com/watch?v=3LlcRUoIpmY', 'Piece de theatre ecrite par le fabuleux Moliere. Se déroule le 20 mai 2019', 2);
 
 -- --------------------------------------------------------
 
@@ -170,7 +165,8 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
 --
 
 INSERT INTO `vendeur` (`ID`, `Pseudo`, `Email`, `PdP`, `PdC`, `Nom`) VALUES
-(12, 'Lili', 'lili@orange.fr', 'kriti-kharbanda-Hot-Photos-4.jpg', '16.jpg', 'Louise');
+(2, 'RoRO', 'romain@orange.fr', 'ppromain.jpg', 'Dupont_Nicolas.jpg', 'Romain'),
+(1, 'Lilia', 'lili@gmail.com', 'pplili.jpg', 'fondClara.jpg', 'Rimou');
 
 -- --------------------------------------------------------
 
@@ -191,15 +187,17 @@ CREATE TABLE IF NOT EXISTS `vetement` (
   `Couleur` varchar(255) NOT NULL,
   `IDvendeur` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `vetement`
 --
 
 INSERT INTO `vetement` (`ID`, `Nom`, `Prix`, `AdressePhoto`, `AdresseVideo`, `Description`, `Taille`, `Sexe`, `Couleur`, `IDvendeur`) VALUES
-(1, '1', 1, '1', NULL, '1', 1, '1', '1', 0),
-(2, '2', 2, '2', NULL, '2', 2, '2', '2', 0);
+(1, 'Veste', 40, 'vesteh.png', NULL, 'Tres jolie veste pour homme ideale pour le printemps/automne', 3, 'Homme', 'Marron', 1),
+(2, 'Stan', 60, 'stan.jpeg', 'https://www.youtube.com/watch?v=S8Gc-xE6GyU', 'Basket taille basse adidas pour femme ', 35, 'Homme', 'Blanche et noire', 2),
+(3, 'Jupe a carreaux', 35, 'jupe.jpeg', NULL, 'Jupe a carreaux elegante ideale pour les occasions.', 36, 'Femme', 'Grise', 2),
+(4, 'Louboutin', 500, 'Louboutin.jpeg', 'https://www.youtube.com/watch?v=-huND1xCm44', 'Louboutin talons aigue couleur noire', 39, 'Femme', 'Noir', 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
