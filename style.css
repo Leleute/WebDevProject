@@ -19,17 +19,45 @@
 			color: white;
 			text-align: center;
 			padding: 15px;
+            height: 140px; 
 		}
+
 		#nav{
 			line-height: 30px;
-			background-color: #CBCFD1;
-			height: 2000px;
-			width: 130px;
+			background-color: azure;
+			height: 40px;
+			width: 100%;
 			float: left;
 			padding: 5px;
 		}
-		#section{
-			background-color: #D2E1E8;
+
+
+#button { 
+
+    border:0; 
+    font-size: 1rem; 
+    text-align: center; 
+    color:black; 
+    text-shadow: 1px 1px 1px #000; 
+    border-radius: 10px; 
+    background-color: darkblue; 
+
+}
+
+#wrapper { width: 680px;
+ min-width: 680px;
+ margin: 0 auto;
+ color: #003300;
+ padding-left: 10px;
+
+}
+
+#leftcolumn { float: left;
+ width: 150px;
+}
+
+	#section{
+			background-color: azure;
 			width: auto
 			float: left;
 			padding: 5px;
@@ -58,15 +86,15 @@
 			top: 45px;
 			left: 1210px;
 			width : 35px; 
-			height: 35px;
+			height: 55px;
 			
 		}
 		
 		.ece{
 			
 			position: absolute;
-			top: 8px;
-			left: 8px;
+			top: 0px;
+			left: 0px;
 			width : 140px; 
 			height: 140px;
 			
@@ -101,3 +129,4 @@
 			height: 750px;*/
 			
 		}
+

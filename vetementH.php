@@ -24,7 +24,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			<img class="basket" src="basket.png" width="30" height="30">
 			<img class="ece" src="ece.jpg">
 			
-			 <a href="#" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
 			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		

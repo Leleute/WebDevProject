@@ -18,7 +18,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </head>
 
 <body>
-	<form action = "panier.php" method="post">
+	<form action = "panier1.php" method="post">
 
 	<div id="header">
 		<h1>BIENVENUE A ECE AMAZON </h1>
@@ -81,7 +81,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </ul>
 <p> <?php echo $donnees['Description']; ?></p>
  <FORM>
-			<input class="BoutonAjoutPanier"
+			<input class="BoutonAjoutPanier" formaction='panier1.php'
 			 type="button"
 			 value="Ajouter au Panier">
 			 </FORM>
