@@ -19,15 +19,95 @@
 			color: white;
 			text-align: center;
 			padding: 15px;
+            height: 140px; 
 		}
+
 		#nav{
 			line-height: 30px;
-			background-color: #CBCFD1;
-			height: 2000px;
-			width: 130px;
+			background-color: azure;
+			height: 40px;
+			width: 100%;
+			float: left;
+			padding-left: 500px;
+            padding-bottom: 30px;
+		}
+
+
+.btn { 
+
+    border:0; 
+    font-size: 10pt; 
+    padding: 0 20px
+    text-align: center ; 
+    color: white; 
+    text-shadow: 1px 1px 1px #000; 
+    border-radius: 10px; 
+    background-color: skyblue; 
+
+}
+
+
+.btn:hover { 
+    background-color: aquamarine; 
+
+}
+
+	#section{
+			background-color: azure;
+			width: auto 
 			float: left;
 			padding: 5px;
+			height: 2000px;
+        
 		}
+
+#flash {
+    
+    text-align: center ; 
+    font-size: 15pt; 
+    
+    
+}
+		#footer{
+			background-color: black;
+			color: white;
+			clear: both;
+			text-align: center;
+			padding: 10px;
+            height: 5;
+		}
+
+		.account{
+			
+			position: absolute; 
+			top: 10px;
+			left: 1210px;
+			width : 35px; 
+			height: 35px;
+			
+		}
+
+		.basket{
+			
+			position: absolute; 
+			top: 50px;
+			left: 1210px;
+			width : 35px; 
+			height: 55px;
+			
+		}
+		
+		.ece{
+			
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width : 140px; 
+			height: 140px;
+			
+		}
+
+
 		#section{
 			background-color: #D2E1E8;
 			width: auto
@@ -81,6 +161,9 @@
 			height: 140px;
 			
 		}
+
+
+
 
 		.vetementh{
 			
