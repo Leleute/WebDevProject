@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,19 +17,14 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
     <link rel="stylesheet" type="text/css" href="style.css">
     <style type="text/css" >
         
-        h2{ 
-        text-align: center; 
-        }
-        
         .color{ 
         background-color: azure; 
             height: 800px; 
         }
-        
-        h5{
-            text-align: center; 
-            
+        h2{ 
+        text-align: center; 
         }
+       
         .aucentre {
   margin: 0 auto;
   width: 400px;
@@ -41,9 +37,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </head>    
     
 <body>
-    
-   
-    <div id="header">
+ <div id="header">
         <h1>BIENVENUE A ECE AMAZON </h1>
             
             <img class="ece" src="ece.jpg">
@@ -57,41 +51,63 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
         <div class="color">  
         <br><br><br>
       <div class="aucentre">
-        
-        
-                    <form action="traitementconnexionAcheteur.php" method="post">
-                        
-                    <table> 
+
+
+
+ <?php
+$login = isset($_POST["login1"])? $_POST["login1"] : "";
+
+$mdp = isset($_POST["mdp1"])? $_POST["mdp1"] : "";
+
+$database = "projectweb";
+            $db_handle = mysqli_connect('localhost', 'root', '');
+            $db_found = mysqli_select_db($db_handle, $database);
+            if ($_POST["buttonCoAch"]) {
+            if ($db_found)
+             {
+            $sql = "SELECT Login,Mdp,ID FROM acheteur WHERE Login LIKE '%$login%' AND Mdp  LIKE '%$mdp%'";
+            $result = mysqli_query($db_handle, $sql);
+
+           if (mysqli_num_rows($result) == 0) {
+//l'acheteur recherché n'existe pas
+echo "Acheteur not found";
+} else {
+	
+            $data= mysqli_fetch_assoc($result);
+
+    session_start();
+
+
+$_SESSION['utilisateur'] = $data['ID'];
+?>
+
+			
+			<br><br>
+ <table> 
                     
-                     <h5> Connexion a votre compte Acheteur</h5>
-                        
-                        <tr> 
-                        
-                        <td> login : </td>
-                            <td> <input type="text" name="login1"> </td>
-                        </tr>
-                         <tr>
-                        <td> <br>  </td>
-                    </tr>
-                        <tr> 
-                        <td> Mot de Passe :  </td>
-                        <td> <input type="text" name="mdp1"></td>
-                        </tr>
-                     <tr>
-                        <td> <br> <br> </td>
-                    </tr>
-                         <td colspan="2" align="center">
-                <input type="submit" name="buttonCoAch" value="Connexion">
-                </td>
-                        
+                     <h5> Vous etes connecté</h5><br><br>
+                        <p>Bienvenue <?php echo " ".$data['Login']; ?></p>
+                       
+                        <a href= "interface-site.php"> 
+				Retour à la page de vente
+			</a>
                     
                     </table>
                     
-                    </form>
+                 
                 
             
                 </div>
                 </div>
+                <?php
+}
+}}
+mysqli_close($db_handle);
+
+
+?>
+
+
 
                
                 

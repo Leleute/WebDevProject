@@ -10,6 +10,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	
 	
+	
 	<title>ECE AMAZON</title>	
 	<link rel="stylesheet" type="text/css" href="vetstyleH.css">
 	<style >	
@@ -32,23 +33,21 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	</div>
 	
 	<div id="section">
-
-		<center>
-		
-			<p style="background-color: white; color: #469533;  font-size: 200%;">Vetements</p>
+	<center>
+			
+		 <p style="background-color: white; color: #469533;  font-size: 200%;">Vendeur(s) inscrits</p>
 			<a href= "interface-site.php"> 
 				<img class="home" src="home.png">
 			</a>
 
-
-
+			
 			<?php
 			$database = "projectweb";
 			$db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
              {
-            $sql = "SELECT * FROM vetement";
+            $sql = "SELECT * FROM vendeur";
             $result = mysqli_query($db_handle, $sql);
 
             while ($donnees = mysqli_fetch_assoc($result))
@@ -60,33 +59,32 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			 
 			 <div class="col-md-4">
 <div class="thumbnail">
-<a href="<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
-<img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;"><br><br>
+<a href="<?php echo $donnees['PdP']; ?>" target="_blank">
+<img class="livresvente" src="<?php echo $donnees['PdP']; ?>" style ="width: 50%;">
 </a>
-
+<a href="<?php echo $donnees['PdC']; ?>" target="_blank">
+<img class="livresvente" src="<?php echo $donnees['PdC']; ?>" style ="width: 50%;">
+</a>
 <div class="caption">
-<h2><?php echo $donnees['Nom']; ?></h2>
+<h2><?php echo $donnees['ID']; ?> </h2>
+Pseudo : <?php echo $donnees['Pseudo']; ?> <br>
+Email : <?php echo $donnees['Email']; ?> <br>
+Nom : <?php echo $donnees['Nom']; ?> <br>
 
-Prix : <?php echo $donnees['Prix']; ?> <br>
-Taille : <?php echo $donnees['Taille']; ?> <br>
-Sexe : <?php echo $donnees['Sexe']; ?> <br>
-Couleur : <?php echo $donnees['Couleur']; ?> <br>
 
-<a  href="<?php echo $donnees['AdresseVideo']; ?>" target="_blank"> <br>
-<video width="240"  height="160" src="<?php echo $donnees['AdresseVideo']; ?>"  controls autobuffer>
-
-</video>
-</a>
-<p> <?php echo $donnees['Description']; ?></p> 
- 			<FORM>
-			<input class="BoutonAjoutPanier"
+ 			
+			<FORM>
+			<input class="Supprimer vendeur" 
 			 type="button"
-			 value="Ajouter au Panier">
+			 value="SupprimerVendeur">
+	
+		
 			</FORM>
+			</div>
 </div>
 
 </div>
-</div>
+
 <br><br><br>
 
             <?php
@@ -104,15 +102,9 @@ mysqli_close($db_handle);
 
 			
 
-		</center>
-	
-	
-			 
-			 
-			 
-			 
+		</center> 
+		
 	</div>
-	
 		
 	<div id="footer">
 		Droit d'auteur | Copyright &copy; 2019, ECE AMAZON 
@@ -121,5 +113,11 @@ mysqli_close($db_handle);
 
 
 
+
+
 </body>
 </html>
+
+
+
+

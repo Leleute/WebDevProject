@@ -18,71 +18,54 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </head>
 
 <body>
+<form action = "pageadmin.php" method="post">
+<form action = "pageadmin.php" method="post">
 	<div id="header">
 		<h1>BIENVENUE A ECE AMAZON </h1>
 			<img class="account" src="account.png" width="30" height="30">
 			<img class="basket" src="basket.png" width="30" height="30">
 			<img class="ece" src="ece.jpg">
 			
-			 <a href="#" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
 			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		
 	</div>
-	<div id="nav">
 	
-		<ul>
-			<li> <a href= "Livre.php"> Livre </a> </li>
-			<li> <a href= "Musique.php"> Musique </a> </li>
-			<li> <a href= "vetementH.php"> Vetements HOMME </a> </li>
-			<li> <a href= "vetementF.php"> Vetements FEMME </a> </li>
-			<li> <a href= "Sport.php"> Sports et Loisir </a> </li>
-		</ul>
-	</div>
 	<div id="section">
-	
-	<center>
+
+		<center>
 		
-			<p style="background-color: white; color: #469533;  font-size: 200%;">Vetement homme</p>
-			<a href= "interface-site.html"> 
+			<p style="background-color: white; color: #469533;  font-size: 200%;">Coucou Admin</p>
+			<p> Veux-tu consulter les vendeurs inscrits sur la page ou ajouter un vendeur ?<P>
+			<a href= "interface-site.php"> 
 				<img class="home" src="home.png">
 			</a>
+
+
+ 			 <button type="submit" class=" btn " type="button"><a href="#"> Ajouter </a>  </button>
 			
-			<FORM>
-			<input class="styled"
-			 type="button"
-			 value="Passer la commande">
-			 </FORM>
-			 
-			 
-			 
-			 
+			 <button type="submit" class=" btn " type="button"><a href="pageadmin.php"> Consulter </a>  </button>
 			
-			<img class="chemiseh" src="chemiseh.jpg">
+</div>
+
+</div>
+</div>
+<br><br><br>
+
+           
+
+
 			
-			<FORM>
-			 <input class="styled4"
-			 type="button"
-			 value="Passer la commande">
-			 </FORM>
-			
-			<img class="vesteh" src="vesteh.png">
-		
-			
-			
-			<img class="chaussureh" src="chaussureh.png">
-			<FORM>
-			 	<input class="styled3"
-			 type="button"
-			 value="Passer la commande">
-			</FORM>
-		
-	</center>
+
+		</center> 
 	</div>
 		
 	<div id="footer">
 		Droit d'auteur | Copyright &copy; 2019, ECE AMAZON 
 	</div>
+
+
 
 
 

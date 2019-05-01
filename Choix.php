@@ -45,7 +45,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <div class= centre2>
 <h2 class="text-center">Connexion</h2>
 <ul>
-<li><a href= "Livre.php"> Acheteur    </a></li>
+<li><a href= "connexionAcheteur.php"> Acheteur    </a></li>
 <li><a href= "Livre.php"> Vendeur    </a></li>
 <li><a href= "Livre.php"> Admin </a></li>
 </ul>
