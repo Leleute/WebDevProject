@@ -24,7 +24,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			<img class="basket" src="basket.png" width="30" height="30">
 			<img class="ece" src="ece.jpg">
 			
-			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+			 <a href="#" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
 			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		
@@ -41,14 +41,15 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	</div>
 	<div id="section">
 
-		<center>
+			<center>
 		
-			<p style="background-color: white; color: #469533;  font-size: 200%;">Sports et loisirs</p>
-			<a href= "interface-site.php"> 
+			<p style="background-color: white; color: #469533;  font-size: 200%;">Sports & Loisirs</p>
+			<a href= "interface-site.html"> 
 				<img class="home" src="home.png">
 			</a>
+
 			<?php
-			$database = "projectweb";
+			$database = "projet-amazon";
 			$db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
@@ -66,19 +67,29 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			 <div class="col-md-4">
 <div class="thumbnail">
 <a href="<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
+
 <img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;">
 </a>
 <div class="caption">
 <h2><?php echo $donnees['Nom']; ?></h2>
-<ul>
-<li>Prix : <?php echo $donnees['Prix']; ?></li>
+Prix : <?php echo $donnees['Prix']; ?> <br>
+Description : <?php echo $donnees['Description']; ?> <br>
+IDvendeur : <?php echo $donnees['IDvendeur']; ?> <br>
 
-</ul>
-<p> <?php echo $donnees['Description']; ?></p>
- 			<FORM>
-			<input class="BoutonAjoutPanier"
+<a  href="<?php echo $donnees['AdresseVideo']; ?>" target="_blank"> <br>
+<video width="240"  height="160" src="<?php echo $donnees['AdresseVideo']; ?>"  controls autobuffer>
+
+</video>
+</a>
+
+ 			
+			<FORM>
+			<input class="BoutonAjoutPanier" formaction='panier1.php'
 			 type="button"
 			 value="Ajouter au Panier">
+			<input type="hidden" name="ID" value="<?php echo $donnees['ID'];?>">
+		
+		
 			</FORM>
 </div>
 
@@ -98,13 +109,10 @@ mysqli_close($db_handle);
 ?>
 
 
-		</center>
-	
-	
-			 
-			 
-			 
-			 
+
+			
+
+		</center> 
 	</div>
 		
 	<div id="footer">

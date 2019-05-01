@@ -71,10 +71,10 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </a>
 <div class="caption">
 <h2><?php echo $donnees['Nom']; ?> </h2>
-Prix : <?php echo $donnees['Prix']; ?>
-Auteur : <?php echo $donnees['Auteur']; ?>
-Editeur : <?php echo $donnees['Editeur']; ?>
-Date : <?php echo $donnees['Date']; ?>
+Prix : <?php echo $donnees['Prix']; ?> <br>
+Auteur : <?php echo $donnees['Auteur']; ?> <br>
+Editeur : <?php echo $donnees['Editeur']; ?> <br>
+Date : <?php echo $donnees['Date']; ?> <br>
 <a  href="<?php echo $donnees['AdresseVideo']; ?>" target="_blank"> <br>
 <video width="240"  height="160" src="<?php echo $donnees['AdresseVideo']; ?>"  controls autobuffer>
 

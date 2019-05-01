@@ -41,20 +41,23 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	</div>
 	<div id="section">
 	
-	<center>
+	
+		<center>
 		
-			<p style="background-color: white; color: #469533;  font-size: 200%;">Vetement homme</p>
+			<p style="background-color: white; color: #469533;  font-size: 200%;">Musique</p>
 			<a href= "interface-site.php"> 
 				<img class="home" src="home.png">
 			</a>
-			
-		<?php
-			$database = "projectweb";
+
+
+
+			<?php
+			$database = "projet-amazon";
 			$db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
              {
-            $sql = "SELECT * FROM vetement WHERE Sexe LIKE '1'";
+            $sql = "SELECT * FROM vetement";
             $result = mysqli_query($db_handle, $sql);
 
             while ($donnees = mysqli_fetch_assoc($result))
@@ -67,16 +70,23 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			 <div class="col-md-4">
 <div class="thumbnail">
 <a href="<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
-<img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;">
+<img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;"><br><br>
 </a>
+
 <div class="caption">
 <h2><?php echo $donnees['Nom']; ?></h2>
-<ul>
-<li>Prix : <?php echo $donnees['Prix']; ?></li>
-<li>Taille : <?php echo $donnees['Taille']; ?></li>
-<li>Couleur : <?php echo $donnees['Couleur']; ?></li>
-</ul>
-<p> <?php echo $donnees['Description']; ?></p>
+
+Prix : <?php echo $donnees['Prix']; ?> <br>
+Taille : <?php echo $donnees['Taille']; ?> <br>
+Sexe : <?php echo $donnees['Sexe']; ?> <br>
+Couleur : <?php echo $donnees['Couleur']; ?> <br>
+
+<a  href="<?php echo $donnees['AdresseVideo']; ?>" target="_blank"> <br>
+<video width="240"  height="160" src="<?php echo $donnees['AdresseVideo']; ?>"  controls autobuffer>
+
+</video>
+</a>
+<p> <?php echo $donnees['Description']; ?></p> 
  			<FORM>
 			<input class="BoutonAjoutPanier"
 			 type="button"
@@ -98,9 +108,20 @@ echo "Database not found";
 }
 mysqli_close($db_handle);
 ?>
-		
-	</center>
+
+
+
+			
+
+		</center>
+	
+	
+			 
+			 
+			 
+			 
 	</div>
+	
 		
 	<div id="footer">
 		Droit d'auteur | Copyright &copy; 2019, ECE AMAZON 
