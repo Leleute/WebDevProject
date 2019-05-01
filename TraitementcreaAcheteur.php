@@ -23,7 +23,7 @@ $codeC = isset($_POST["codeC"])? $_POST["codeC"] : "";
 $database = "projectweb"; 
 
 
-$db_handle = mysqli_connect('localhost', 'root', '');
+$db_handle = mysqli_connect('localhost:8889', 'root', 'root', 'projectweb');
 $db_found = mysqli_select_db($db_handle, $database);
 if ($_POST["button2"]) {
 if ($db_found) {
@@ -67,7 +67,7 @@ $sql .= " AND Email LIKE '%$email%'";
 }
 $result = mysqli_query($db_handle, $sql);
 while ($data = mysqli_fetch_assoc($result)) {
-echo "Informations sur le livre ajouté:" . "<br>";
+echo "Informations sur le acheteur ajouté:" . "<br>";
 echo "ID: " . $data['ID'] . "<br>";
 echo "Login: " . $data['Login'] . "<br>";
 echo "<br>";
