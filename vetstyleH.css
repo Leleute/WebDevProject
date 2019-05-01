@@ -3,9 +3,9 @@
 		font-size: 40px;
   text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
   font-family:Arial, Helvetica, sans-serif;
-  color: #white;
+  color: #DC2315;
   padding:16px;
-  font-weight:lighter;
+  font-weight:#BA4902;
   text-align:center;
   display:block;
   margin:16px;
@@ -24,7 +24,7 @@
 
 		#nav{
 			line-height: 30px;
-			background-color: azure;
+			background-color: #EFD3C5;
 			height: 40px;
 			width: 100%;
 			float: left;
@@ -42,22 +42,24 @@
     color: white; 
     text-shadow: 1px 1px 1px #000; 
     border-radius: 10px; 
-    background-color: skyblue; 
+    background-color: #F3B18B; 
+	height : 40px;
+	font-size: 12pt;
 
 }
 
 
 .btn:hover { 
-    background-color: aquamarine; 
+    background-color: white; 
 
 }
 
 	#section{
-			background-color: azure;
+			background-color: #EFD3C5;
 			width: auto 
 			float: left;
 			padding: 5px;
-			height: 2000px;
+			height: 5000px;
         
 		}
 
@@ -69,7 +71,7 @@
     
 }
 		#footer{
-			background-color: black;
+			background-color: #976C52;
 			color: white;
 			clear: both;
 			text-align: center;
@@ -77,51 +79,8 @@
             height: 5;
 		}
 
-		.account{
-			
-			position: absolute; 
-			top: 10px;
-			left: 1210px;
-			width : 35px; 
-			height: 35px;
-			
-		}
-
-		.basket{
-			
-			position: absolute; 
-			top: 50px;
-			left: 1210px;
-			width : 35px; 
-			height: 55px;
-			
-		}
-		
-		.ece{
-			
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			width : 140px; 
-			height: 140px;
-			
-		}
 
 
-		#section{
-			background-color: #D2E1E8;
-			width: auto
-			float: left;
-			padding: 5px;
-			height: 2000px;
-		}
-		#footer{
-			background-color: black;
-			color: white;
-			clear: both;
-			text-align: center;
-			padding: 10px;
-		}
 		.account{
 			
 			position: absolute;
@@ -161,9 +120,6 @@
 			height: 140px;
 			
 		}
-
-
-
 
 		.vetementh{
 			

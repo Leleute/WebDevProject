@@ -30,28 +30,27 @@ h1
 			float: left;
 			padding-left: 500px;
             padding-bottom: 30px;
-            
 		}
 
 
 .btn { 
 
     border:0; 
-    font-size: 12pt; 
-    padding: 0 20px;
+    font-size: 10pt; 
+    padding: 0 20px
     text-align: center ; 
-     
+    color: white; 
     text-shadow: 1px 1px 1px #000; 
     border-radius: 10px; 
     background-color: #F3B18B; 
-    height: 40px; 
- 
+	height : 40px;
+	font-size: 12pt;
 
 }
 
 
 .btn:hover { 
-    background-color: #F0C4AB; 
+    background-color: white; 
 
 }
 
@@ -60,7 +59,7 @@ h1
 			width: auto 
 			float: left;
 			padding: 5px;
-			height: 2000px;
+			height: 5000px;
         
 		}
 
