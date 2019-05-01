@@ -1,3 +1,12 @@
+<?php
+if($_POST["ID"])
+	{
+		echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+		echo $_POST["ID"];
+	}	
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,13 +51,9 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	<div id="section">
 
 		<center>
-		
-			<p style="background-color: white; color: #469533;  font-size: 200%;">Livres</p>
-			<a href= "interface-site.php"> 
-				<img class="home" src="home.png">
-			</a>
-
-			<?php
+						<p style="background-color: white; color: #469533;  font-size: 200%;">Livres</p>
+						<?php
+			session_start();
 			$database = "projectweb";
 			$db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
@@ -61,6 +66,12 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
             {
             	?>
             	 
+			<form action="Livre.php" method="post">
+
+			<a href= "interface-site.php"> 
+				<img class="home" src="home.png">
+			</a>
+
             	 
             	
 			 
@@ -75,6 +86,7 @@ Prix : <?php echo $donnees['Prix']; ?>
 Auteur : <?php echo $donnees['Auteur']; ?>
 Editeur : <?php echo $donnees['Editeur']; ?>
 Date : <?php echo $donnees['Date']; ?>
+ID : <?php echo$donnees['ID']; ?>
 
 <a  href="<?php echo $donnees['AdresseVideo']; ?>" target="_blank"> <br>
 <video width="240"  height="160" src="<?php echo $donnees['AdresseVideo']; ?>"  controls autobuffer>
@@ -83,14 +95,9 @@ Date : <?php echo $donnees['Date']; ?>
 </a>
 
 <p> <?php echo $donnees['Description']; ?></p>
- 			
 			<FORM>
-			<input class="BoutonAjoutPanier" formaction='panier1.php'
-			 type="button"
-			 value="Ajouter au Panier">
+			<input  type="submit" value="Ajouter au Panier">
 			<input type="hidden" name="ID" value="<?php echo $donnees['ID'];?>">
-		
-		
 			</FORM>
 </div>
 
