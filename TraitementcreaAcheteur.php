@@ -12,8 +12,6 @@ $codePostal = isset($_POST["codePostal"])? $_POST["codePostal"] : "";
 $pays = isset($_POST["pays"])? $_POST["pays"] : "";
 $tel = isset($_POST["tel"])? $_POST["tel"] : "";
 $typeC = isset($_POST["typeC"])? $_POST["typeC"] : "";
-
- // echo "$typeC"; 
 $numC = isset($_POST["numC"])? $_POST["numC"] : "";
 $nomC = isset($_POST["nomC"])? $_POST["nomC"] : "";
 $dateC = isset($_POST["dateC"])? $_POST["dateC"] : "";
@@ -23,7 +21,7 @@ $codeC = isset($_POST["codeC"])? $_POST["codeC"] : "";
 $database = "projectweb"; 
 
 
-$db_handle = mysqli_connect('localhost:8889', 'root', 'root', 'projectweb');
+$db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 if ($_POST["button2"]) {
 if ($db_found) {

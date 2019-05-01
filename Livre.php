@@ -49,7 +49,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			</a>
 
 			<?php
-			$database = "projet-amazon";
+			$database = "projectweb";
 			$db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
@@ -75,6 +75,7 @@ Prix : <?php echo $donnees['Prix']; ?>
 Auteur : <?php echo $donnees['Auteur']; ?>
 Editeur : <?php echo $donnees['Editeur']; ?>
 Date : <?php echo $donnees['Date']; ?>
+
 <a  href="<?php echo $donnees['AdresseVideo']; ?>" target="_blank"> <br>
 <video width="240"  height="160" src="<?php echo $donnees['AdresseVideo']; ?>"  controls autobuffer>
 
