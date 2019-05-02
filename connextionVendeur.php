@@ -58,11 +58,11 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
       <div class="aucentre">
         
         
-                    <form action="traitementconnexionAcheteur.php" method="post">
+                    <form action="traitementconnexionVendeur.php" method="post">
                         
                     <table> 
                     
-                     <h5> Connexion a votre compte Acheteur</h5>
+                     <h5> Connexion a votre compte Vendeur</h5>
 					 
                         
                         <tr> 
