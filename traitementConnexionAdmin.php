@@ -89,7 +89,7 @@ $_SESSION['utilisateur'] = $data['ID'];
                      <h5> Vous etes connecté</h5><br><br>
                         <p>Bienvenue <?php echo " ".$data['Login']; ?></p>
                        
-                        <a href= "menuadmin.php"> 
+                        <a href= "pageadmin.php"> 
 				Suivant
 			</a>
                     
@@ -103,6 +103,7 @@ $_SESSION['utilisateur'] = $data['ID'];
                 <?php
 }
 }}
+$_SESSION['admin'] = 0;
 mysqli_close($db_handle);
 ?>
 
