@@ -14,8 +14,8 @@ if ($_POST["button2"])
 		$sql = "SELECT * FROM vendeur";
 		if ($email != "") {
 			$sql .= " WHERE Email LIKE '%$email%'";
-			if ($Login != "") {
-				$sql .= " OR Login LIKE '%$login%'";
+			if ($login != "") {
+				$sql .= " OR Pseudo LIKE '%$login%'";
 			}
 		}
 		$result1 = mysqli_query($db_handle, $sql);
@@ -149,7 +149,7 @@ if ($_POST["button2"])
 			{
 				$pdp = basename( $_FILES["fileToUpload1"]["name"]);
 				$pdc = basename( $_FILES["fileToUpload2"]["name"]);
-				$sql = "INSERT INTO vendeur(ID, Login, Email, PdP, PdC, Nom, Mdp)
+				$sql = "INSERT INTO vendeur(ID, Pseudo, Email, PdP, PdC, Nom, mdp)
 				VALUES (NULL, '$login', '$email', '$pdp', '$pdc', '$nom', '$mdp')";
 				$result = mysqli_query($db_handle, $sql);
 			/// Affichage de la reussite !!
