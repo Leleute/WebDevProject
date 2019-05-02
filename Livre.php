@@ -36,7 +36,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
         </div>
 			
 			
-			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+			 <a href="#" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
 			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		
@@ -112,14 +112,9 @@ Date : <?php echo $donnees['Date']; ?><br>
 </a>
 
 <p> <?php echo $donnees['Description']; ?></p>
- 			
 			<FORM>
-			<input class="BoutonAjoutPanier" formaction='panier1.php'
-			 type="button"
-			 value="Ajouter au Panier">
+			<input  type="submit" value="Ajouter au Panier">
 			<input type="hidden" name="ID" value="<?php echo $donnees['ID'];?>">
-		
-		
 			</FORM>
 </div>
 
