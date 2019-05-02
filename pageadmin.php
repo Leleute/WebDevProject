@@ -18,6 +18,8 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </head>
 
 <body>
+<form action = "pageadmin.php" method="post">
+<form action = "pageadmin.php" method="post">
 	<div id="header">
 		<h1>BIENVENUE A ECE AMAZON </h1>
 			<img class="account" src="account.png" width="30" height="30">
@@ -25,29 +27,20 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			<img class="ece" src="ece.jpg">
 			
 			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
-			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
+			 <a href="pagepanier.php" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		
 	</div>
-	<div id="nav">
 	
-		<ul>
-			<li> <a href= "Livre.php"> Livre </a> </li>
-			<li> <a href= "Musique.php"> Musique </a> </li>
-			<li> <a href= "vetementH.php"> Vetements HOMME </a> </li>
-			<li> <a href= "vetementF.php"> Vetements FEMME </a> </li>
-			<li> <a href= "Sport.php"> Sports et Loisir </a> </li>
-		</ul>
-	</div>
 	<div id="section">
-
-		<center>
-		
-			<p style="background-color: white; color: #469533;  font-size: 200%;">Vendeur(s) inscrits</p>
-			<a href= "interface-site.php"> 
+	<center>
+			
+		 <p style="background-color: white; color: #469533;  font-size: 200%;">Vendeur(s) inscrits</p>
+			<a href= "interface-site.html"> 
 				<img class="home" src="home.png">
 			</a>
 
+			
 			<?php
 			$database = "projectweb";
 			$db_handle = mysqli_connect('localhost', 'root', '');
@@ -74,7 +67,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </a>
 <div class="caption">
 <h2><?php echo $donnees['ID']; ?> </h2>
-Pseudo : <?php echo $donnees['Pseudo']; ?> <br>
+Pseudo : <?php echo $donnees['Login']; ?> <br>
 Email : <?php echo $donnees['Email']; ?> <br>
 Nom : <?php echo $donnees['Nom']; ?> <br>
 
@@ -87,10 +80,11 @@ Nom : <?php echo $donnees['Nom']; ?> <br>
 	
 		
 			</FORM>
+			</div>
 </div>
 
 </div>
-</div>
+
 <br><br><br>
 
             <?php
@@ -105,10 +99,13 @@ mysqli_close($db_handle);
 ?>
 
 
-
+<a left: 200px; href= "menuadmin.php"> 
+				Retour
+			</a>
 			
 
 		</center> 
+		
 	</div>
 		
 	<div id="footer">
@@ -122,3 +119,7 @@ mysqli_close($db_handle);
 
 </body>
 </html>
+
+
+
+

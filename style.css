@@ -1,11 +1,11 @@
-		h1
+h1
 	{
 		font-size: 40px;
   text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
   font-family:Arial, Helvetica, sans-serif;
-  color: #white;
+  color: #DC2315;
   padding:16px;
-  font-weight:lighter;
+  font-weight:#BA4902;
   text-align:center;
   display:block;
   margin:16px;
@@ -19,41 +19,80 @@
 			color: white;
 			text-align: center;
 			padding: 15px;
-		}
-		#nav{
-			line-height: 30px;
-			background-color: #CBCFD1;
-			height: 2000px;
-			width: 130px;
-			float: left;
-			padding: 5px;
+            height: 140px; 
 		}
 
-#wrapper { width: 680px;
- min-width: 680px;
- margin: 0 auto;
- color: #003300;
- padding-left: 10px;
+		#nav{
+			line-height: 30px;
+			background-color: #EFD3C5;
+            
+			height: 40px;
+			width: 100%;
+			float: left;
+			padding-left: 500px;
+           
+            padding-bottom: 30px;
+		}
+.home{
+			
+			position: absolute;
+			top: 155px;
+			left: 1210px;
+			width : 35px; 
+			height: 35px;
+			
+		}
+
+
+.btn { 
+
+    border:0; 
+    font-size: 10pt; 
+    padding: 0 20px
+    text-align: center ; 
+    color: white; 
+    text-shadow: 1px 1px 1px #000; 
+    border-radius: 10px; 
+    background-color: #F3B18B; 
+	height : 40px;
+	font-size: 12pt;
+
+}
+
+
+.btn:hover { 
+    background-color: white; 
 
 }
 
 	#section{
-			background-color: #D2E1E8;
-			width: auto
+			background-color: #EFD3C5;
+			width: auto 
 			float: left;
 			padding: 5px;
-			height: 2000px;
+			height: 5000px;
+        
 		}
+
+#flash {
+    
+    text-align: center ; 
+    font-size: 15pt; 
+    
+    
+}
 		#footer{
-			background-color: black;
+			background-color: #976C52;
 			color: white;
 			clear: both;
 			text-align: center;
 			padding: 10px;
+            height: 5;
 		}
+
 		.account{
 			
-			position: absolute;
+			position: absolute; 
 			top: 10px;
 			left: 1210px;
 			width : 35px; 
@@ -63,19 +102,19 @@
 
 		.basket{
 			
-			position: absolute;
-			top: 45px;
+			position: absolute; 
+			top: 50px;
 			left: 1210px;
 			width : 35px; 
-			height: 35px;
+			height: 55px;
 			
 		}
 		
 		.ece{
 			
 			position: absolute;
-			top: 8px;
-			left: 8px;
+			top: 0px;
+			left: 0px;
 			width : 140px; 
 			height: 140px;
 			
@@ -83,11 +122,11 @@
 		
 		.sandale{
 			
-			position: absolute;
-			top: 218px;
+			position: center;
+			top: 300px;
 			left: 315px;
-			/*width : 750px; 
-			height: 440px;*/
+			width : 750px; 
+			height: 440px;
 			
 		}
 		
@@ -97,7 +136,7 @@
 			top: 818px;
 			left: 515px;
 			width : 440px; 
-			height: 750px;*/
+			height: 750px;
 			
 		}
 		
@@ -109,4 +148,5 @@
 			/*width : 440px; 
 			height: 750px;*/
 			
+
 		}

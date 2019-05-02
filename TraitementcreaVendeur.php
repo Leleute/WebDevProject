@@ -1,7 +1,4 @@
 <?php
-
-
-
 var_dump($_FILES);
 //"images" = subdirectory for images in www directory
 $target_dir = "images/";
@@ -21,10 +18,8 @@ if(isset($_POST["button1"])) {
  }
 }
  $database = "projectweb"; 
-
 $db_handle = mysqli_connect('localhost:8889', 'root', 'root', 'projectweb');
 $db_found = mysqli_select_db($db_handle, $database);
-
 // Vérifier la taille du fichier
 if ($_FILES["fileToUpload"]["size"] > 500000) {
  echo "<br>" . "Désolé, votre fichier est trop volumineux.";

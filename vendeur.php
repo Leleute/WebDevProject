@@ -54,6 +54,7 @@
 		$sql .= " WHERE IDvendeur LIKE '%$vendeurID%'";
 		$result = mysqli_query($db_handle, $sql);
 		while ($data = mysqli_fetch_assoc($result)) {
+			echo $data['Taille']
 			echo $data['Nom']. "<br>";
 			echo $data['Prix'] . "<br>";
 			echo $data['Auteur'] . "<br>";
