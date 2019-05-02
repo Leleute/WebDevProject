@@ -12,9 +12,8 @@ $codePostal = isset($_POST["codePostal"])? $_POST["codePostal"] : "";
 $pays = isset($_POST["pays"])? $_POST["pays"] : "";
 $tel = isset($_POST["tel"])? $_POST["tel"] : "";
 $typeC = isset($_POST["typeC"])? $_POST["typeC"] : "";
-
- // echo "$typeC"; 
 $numC = isset($_POST["numC"])? $_POST["numC"] : "";
+echo $numC;
 $nomC = isset($_POST["nomC"])? $_POST["nomC"] : "";
 $dateC = isset($_POST["dateC"])? $_POST["dateC"] : "";
 $codeC = isset($_POST["codeC"])? $_POST["codeC"] : "";
@@ -52,7 +51,7 @@ if($nom == "" || $prenom == "" || $login == "" || $mdp == "" || $adr1 == "" || $
     
 
 if(mysqli_num_rows($result1) == 0 && $result2 == 0) {
-$sql = "INSERT INTO acheteur(ID, Nom, Prenom, Email, Login, MdP, Adresse1, Adresse2, Ville, CodePostal, Pays, Tel, TypeCarte, NumCarte, NomCarte, DateExpi, CodeSecu)
+$sql = "INSERT INTO acheteur(ID, Nom, Prenom, Email, Login, Mdp, Adresse1, Adresse2, Ville, CodePostale, Pays, Tel, TypeCarte, NumCarte, NomCarte, DateExpi, CodeSecu)
 VALUES (NULL, '$nom', '$prenom', '$email', '$login', '$mdp', '$adr1', '$adr2', '$ville', '$codePostal', '$pays', '$tel', '$typeC', '$numC', '$nomC', '$dateC', '$codeC')";
 $result = mysqli_query($db_handle, $sql);
 echo "Ajout reussit !" . "<br>";
@@ -67,7 +66,7 @@ $sql .= " AND Email LIKE '%$email%'";
 }
 $result = mysqli_query($db_handle, $sql);
 while ($data = mysqli_fetch_assoc($result)) {
-echo "Informations sur le livre ajouté:" . "<br>";
+echo "Informations sur le acheteur ajouté:" . "<br>";
 echo "ID: " . $data['ID'] . "<br>";
 echo "Login: " . $data['Login'] . "<br>";
 echo "<br>";

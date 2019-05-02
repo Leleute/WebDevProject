@@ -1,7 +1,8 @@
 <?php
-$pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
+$login = isset($_POST["login"])? $_POST["login"] : "";
 $email = isset($_POST["email"])? $_POST["email"] : "";
 $nom = isset($_POST["nom"])? $_POST["nom"] : "";
+$mdp = isset($_POST["mdp"])? $_POST["mdp"] : "";
 $database = "projectweb";
 
 $db_handle = mysqli_connect('localhost', 'root', '');
@@ -13,18 +14,18 @@ if ($_POST["button2"])
 		$sql = "SELECT * FROM vendeur";
 		if ($email != "") {
 			$sql .= " WHERE Email LIKE '%$email%'";
-			if ($pseudo != "") {
-				$sql .= " OR Pseudo LIKE '%$pseudo%'";
+			if ($Login != "") {
+				$sql .= " OR Login LIKE '%$login%'";
 			}
 		}
 		$result1 = mysqli_query($db_handle, $sql);
 		if (mysqli_num_rows($result1) != 0) 
 		{
-			echo "Un utilisateur utilise deja cette adresse Email ou se pseudo, veuillez en changer";
+			echo "Un utilisateur utilise deja cette adresse Email ou ce login, veuillez changer svp";
 			echo "<br />";
 		} 
 		$result2 = 0;
-		if($pseudo == "" || $email == "" || $nom == "")
+		if($login == "" || $email == "" || $nom == "" || $mdp == "")
 		{
 			$result2 = 1;
 			echo "Il y a au moins un des composants obligatoires de vide";
@@ -148,8 +149,8 @@ if ($_POST["button2"])
 			{
 				$pdp = basename( $_FILES["fileToUpload1"]["name"]);
 				$pdc = basename( $_FILES["fileToUpload2"]["name"]);
-				$sql = "INSERT INTO vendeur(ID, Pseudo, Email, PdP, PdC, Nom)
-				VALUES (NULL, '$pseudo', '$email', '$pdp', '$pdc', '$nom')";
+				$sql = "INSERT INTO vendeur(ID, Login, Email, PdP, PdC, Nom, Mdp)
+				VALUES (NULL, '$login', '$email', '$pdp', '$pdc', '$nom', '$mdp')";
 				$result = mysqli_query($db_handle, $sql);
 			/// Affichage de la reussite !!
 

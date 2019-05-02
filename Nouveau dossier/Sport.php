@@ -18,36 +18,43 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </head>
 
 <body>
-<form action = "pageadmin.php" method="post">
-<form action = "pageadmin.php" method="post">
 	<div id="header">
 		<h1>BIENVENUE A ECE AMAZON </h1>
 			<img class="account" src="account.png" width="30" height="30">
 			<img class="basket" src="basket.png" width="30" height="30">
 			<img class="ece" src="ece.jpg">
 			
-			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
-			 <a href="pagepanier.php" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
+			 <a href="#" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		
 	</div>
+	<div id="nav">
 	
+		<ul>
+			<li> <a href= "Livre.php"> Livre </a> </li>
+			<li> <a href= "Musique.php"> Musique </a> </li>
+			<li> <a href= "vetementH.php"> Vetements HOMME </a> </li>
+			<li> <a href= "vetementF.php"> Vetements FEMME </a> </li>
+			<li> <a href= "Sport.php"> Sports et Loisir </a> </li>
+		</ul>
+	</div>
 	<div id="section">
-	<center>
-			
-		 <p style="background-color: white; color: #469533;  font-size: 200%;">Vendeur(s) inscrits</p>
+
+			<center>
+		
+			<p style="background-color: white; color: #469533;  font-size: 200%;">Sports & Loisirs</p>
 			<a href= "interface-site.html"> 
 				<img class="home" src="home.png">
 			</a>
 
-			
 			<?php
 			$database = "projectweb";
 			$db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
              {
-            $sql = "SELECT * FROM vendeur";
+            $sql = "SELECT * FROM sportetloisir";
             $result = mysqli_query($db_handle, $sql);
 
             while ($donnees = mysqli_fetch_assoc($result))
@@ -59,32 +66,35 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			 
 			 <div class="col-md-4">
 <div class="thumbnail">
-<a href="<?php echo $donnees['PdP']; ?>" target="_blank">
-<img class="livresvente" src="<?php echo $donnees['PdP']; ?>" style ="width: 50%;">
-</a>
-<a href="<?php echo $donnees['PdC']; ?>" target="_blank">
-<img class="livresvente" src="<?php echo $donnees['PdC']; ?>" style ="width: 50%;">
+<a href="<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
+
+<img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;">
 </a>
 <div class="caption">
-<h2><?php echo $donnees['ID']; ?> </h2>
-Pseudo : <?php echo $donnees['Login']; ?> <br>
-Email : <?php echo $donnees['Email']; ?> <br>
-Nom : <?php echo $donnees['Nom']; ?> <br>
+<h2><?php echo $donnees['Nom']; ?></h2>
+Prix : <?php echo $donnees['Prix']; ?> <br>
+Description : <?php echo $donnees['Description']; ?> <br>
+IDvendeur : <?php echo $donnees['IDvendeur']; ?> <br>
 
+<a  href="<?php echo $donnees['AdresseVideo']; ?>" target="_blank"> <br>
+<video width="240"  height="160" src="<?php echo $donnees['AdresseVideo']; ?>"  controls autobuffer>
+
+</video>
+</a>
 
  			
 			<FORM>
-			<input class="Supprimer vendeur" 
+			<input class="BoutonAjoutPanier" formaction='panier1.php'
 			 type="button"
-			 value="SupprimerVendeur">
-	
+			 value="Ajouter au Panier">
+			<input type="hidden" name="ID" value="<?php echo $donnees['ID'];?>">
+		
 		
 			</FORM>
-			</div>
 </div>
 
 </div>
-
+</div>
 <br><br><br>
 
             <?php
@@ -99,13 +109,10 @@ mysqli_close($db_handle);
 ?>
 
 
-<a left: 200px; href= "menuadmin.php"> 
-				Retour
-			</a>
+
 			
 
 		</center> 
-		
 	</div>
 		
 	<div id="footer">
@@ -115,11 +122,5 @@ mysqli_close($db_handle);
 
 
 
-
-
 </body>
 </html>
-
-
-
-

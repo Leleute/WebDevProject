@@ -13,7 +13,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
         
     
 	<title>ECE AMAZON</title>	
-	<link rel="stylesheet" type="text/css" href="vetstyleH.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	
 	
      
@@ -53,16 +53,22 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
                 
           
     <div id="section">  
+        
+        
+        <p style="background-color: white; color: #469533;  font-size: 200%;">Connexion a votre compte admin</p>
+			<a href= "interface-site.html"
+				
+			> <img class="home" src="home.png"></a>
         <div class="color">  
         <br><br><br>
       <div class="aucentre">
         
         
-                    <form action="traitementconnexionAcheteur.php" method="post">
+                    <form action="traitementconnexionAdmin.php" method="post">
                         
                     <table> 
                     
-                     <h5> Connexion a votre compte Acheteur</h5>
+                     <h5> Connexion a votre compte Admin</h5>
 					 
                         
                         <tr> 

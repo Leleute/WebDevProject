@@ -33,32 +33,25 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	</div>
 	
 	<div id="section">
-
-		<center>
-		
-			<p style="background-color: white; color: #469533;  font-size: 200%;">Coucou Admin</p>
-			<p> Veux-tu consulter les vendeurs inscrits sur la page ou ajouter un vendeur ?<P>
+	<center>
+			
+		 <p style="background-color: white; color: #469533;  font-size: 200%;">Mon panier</p>
 			<a href= "interface-site.html"> 
 				<img class="home" src="home.png">
 			</a>
 
-
- 			 <button type="submit" class=" btn " type="button"><a href="#"> Ajouter </a>  </button>
 			
-			 <button type="submit" class=" btn " type="button"><a href="pageadmin.php"> Consulter </a>  </button>
-			
-</div>
+            	 
+            
 
-</div>
-</div>
 <br><br><br>
 
-           
-
+         
 
 			
 
 		</center> 
+		
 	</div>
 		
 	<div id="footer">
@@ -72,3 +65,10 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 
 </body>
 </html>
+
+
+
+
+
+
+5
