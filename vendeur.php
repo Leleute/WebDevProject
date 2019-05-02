@@ -16,7 +16,7 @@
 </head>
 <body>
 	<?php
-	$vendeurID = 12;
+	$vendeurID = 1;
 	$database = "projectweb";
 	$db_handle = mysqli_connect('localhost', 'root', '');
 	$db_found = mysqli_select_db($db_handle, $database);
@@ -30,10 +30,10 @@
 			echo "Vous etes : " . "<br>";
 			echo $data['Nom'] . "<br>";
 			echo $data['Email'] . "<br>";
-			echo $data['Pseudo'] . "<br>";
+			echo $data['Login'] . "<br>";
 			?>
-	<img class="PdP" src="images/<?php echo $data['PdP']; ?>" style = "width: 50%;">
-	<<img class="PdP" src="images/<?php echo $data['PdC']; ?>" style = "width: 50%;">
+	<img class="PdP" src="bdd/<?php echo $data['PdP']; ?>" style = "width: 50%;">
+	<img class="PdC" src="bdd/<?php echo $data['PdC']; ?>" style = "width: 50%;">
 	<?php
 		}
 	}
@@ -43,7 +43,6 @@
         	<h4>Livres</h4>
 
 	<?php
-	$vendeurID =12;
 	$database = "projectweb";
 	$db_handle = mysqli_connect('localhost', 'root', '');
 	$db_found = mysqli_select_db($db_handle, $database);
@@ -54,7 +53,7 @@
 		$sql .= " WHERE IDvendeur LIKE '%$vendeurID%'";
 		$result = mysqli_query($db_handle, $sql);
 		while ($data = mysqli_fetch_assoc($result)) {
-			echo $data['Taille']
+			//echo $data['Taille']. "<br>";
 			echo $data['Nom']. "<br>";
 			echo $data['Prix'] . "<br>";
 			echo $data['Auteur'] . "<br>";

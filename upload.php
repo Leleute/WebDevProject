@@ -35,7 +35,7 @@ if ($_POST["button2"])
 		if(mysqli_num_rows($result1) == 0 && $result2 == 0)
 		{
 			//"images" = subdirectory for images in www directory
-			$target_dir = "images/";
+			$target_dir = "bdd/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload1"]["name"]);
 			$uploadOk = 1;
 			//file extension in lower case	

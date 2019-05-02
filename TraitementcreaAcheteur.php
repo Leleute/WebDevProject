@@ -1,6 +1,6 @@
 <?php
-$nom = isset($_POST["nom"])? $_POST["nom"] : "";
 
+$nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $prenom = isset($_POST["prenom"])? $_POST["prenom"] : "";
 $email = isset($_POST["email"])? $_POST["email"] : "";
 $login = isset($_POST["login"])? $_POST["login"] : "";
@@ -13,14 +13,11 @@ $pays = isset($_POST["pays"])? $_POST["pays"] : "";
 $tel = isset($_POST["tel"])? $_POST["tel"] : "";
 $typeC = isset($_POST["typeC"])? $_POST["typeC"] : "";
 $numC = isset($_POST["numC"])? $_POST["numC"] : "";
-echo $numC;
 $nomC = isset($_POST["nomC"])? $_POST["nomC"] : "";
 $dateC = isset($_POST["dateC"])? $_POST["dateC"] : "";
 $codeC = isset($_POST["codeC"])? $_POST["codeC"] : "";
 
-
 $database = "projectweb"; 
-
 
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
