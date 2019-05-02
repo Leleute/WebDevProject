@@ -36,7 +36,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
         </div>
 			
 			
-			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+			 <a href="#" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
 			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		
@@ -72,6 +72,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			
 <!-- connexion a la BBD--> 
 			<?php
+			session_start();
 			$database = "projectweb";
 			$db_handle = mysqli_connect('localhost', 'root','');
             $db_found = mysqli_select_db($db_handle, $database);
@@ -93,8 +94,9 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			 
 			 <div class="col-xs-5">
 <div class="thumbnail" style="background-color:#EFD3C5;">
-<a href="<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
-<img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%; ">
+<!--<a href="imageslivres/<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
+<img class="livresvente" src="imageslivres/""<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%; ">-->
+<img class="PdP" src="imageslivres/<?php echo $donnees['AdressePhoto']; ?>" style = "width: 50%;">
 </a>
 <div class="caption">
 <h2><?php echo $donnees['Nom']; ?> </h2>
@@ -112,15 +114,46 @@ Date : <?php echo $donnees['Date']; ?><br>
 </a>
 
 <p> <?php echo $donnees['Description']; ?></p>
- 			
-			<FORM>
-			<input class="BoutonAjoutPanier" formaction='panier1.php'
-			 type="button"
-			 value="Ajouter au Panier">
+			<!--<FORM>
+			<input  type="submit" value="Ajouter au Panier">
 			<input type="hidden" name="ID" value="<?php echo $donnees['ID'];?>">
-		
-		
 			</FORM>
+			<form onclick="return check()">	
+			<input type="button" class="button" value="a"><br><br>
+			<p id="demo"></p>
+			</form>-->
+<?php
+$IDach = 1;
+//$IDach = $_SESSION["utilisateur"];
+if(!empty($_POST['Test']) && !empty($IDach)) {
+//connectez-vous dans votre BDD
+//Rappel: votre serveur = localhost et votre login = root et votre password = <rien>
+//*** Partie Recherche d'un livre ***
+//*** Partie Ajout d'un nouveau livre ***
+
+$IDobj = $_POST['Test'];
+$categorie = "livres";
+
+$sql = "INSERT INTO panier(ID, IDAcheteur, IDObjet, categorie)
+ VALUES(Null, '$IDach', '$IDobj', '$categorie')";
+$result1 = mysqli_query($db_handle, $sql);
+echo "Fonctionne <br>";
+$_POST['Test'] = Null;
+//on affiche le livre ajouté$sql = "SELECT * FROM employes";
+
+//fermer la connexion
+    // ou echo afficher();
+}
+?>
+ 
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+	<input type="hidden" name="id" value="<?php echo $donnees['ID'];?>">
+	<input type="submit" name="Test" value="<?php echo $donnees['ID'];?>"
+	<form>
+
+
+</script>
+	<FORM>
 </div>
 
 </div>

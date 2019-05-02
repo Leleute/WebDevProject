@@ -89,8 +89,8 @@ $_SESSION['utilisateur'] = $data['ID'];
                      <h5> Vous etes connecté</h5><br><br>
                         <p>Bienvenue <?php echo " ".$data['Login']; ?></p>
                        
-                        <a href= "interface-site.html"> 
-				Retour à la page de vente
+                        <a href= "vendeur.php"> 
+				Allez a votre page de vendeur 
 			</a>
                     
                     </table>
