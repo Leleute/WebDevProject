@@ -36,7 +36,11 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
         </div>
 			
 			
+<<<<<<< HEAD
 			<a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+=======
+			 <a href="#" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
 			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		
@@ -56,11 +60,19 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
         <button type="submit" class=" btn " type="button"><a href="sport.php"> Sport et Loisirs </a> </button>
         
      
+<<<<<<< HEAD
         <button type="submit" class=" btn  " type="button"> <a href="vetementH.php"> Vetements </a></button>
         
 
         
       
+=======
+        <button type="submit" class=" btn  " type="button"> <a href="vetements.php"> Vetements </a></button>
+        
+
+        
+        <button type="submit" class=" btn" type="button"> <a href="contact.php"> Contact </a></button>
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
          
          	</div> 
    
@@ -69,14 +81,22 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 
 		<center>
 		
+<<<<<<< HEAD
 			<p style="background-color:#EFD3C5; color: #469533;  font-size: 200%; "> <B> Musique</B></p>
+=======
+			<p style="background-color:#EFD3C5; color: #469533;  font-size: 200%; ">Musique</p>
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
             <br><br>
 			
 
 
 			<?php
 			$database = "projectweb";
+<<<<<<< HEAD
 			$db_handle = mysqli_connect('localhost', 'root');
+=======
+			$db_handle = mysqli_connect('localhost:8889', 'root', 'root', 'projectweb');
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
              {
@@ -94,7 +114,11 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			 
 			 <div class="col-xs-5">
                  
+<<<<<<< HEAD
 <div class="thumbnail" style="background-color:#EFD3C5;">
+=======
+<div class="thumbnail">
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
 <a href="<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
 <img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;"><br><br>
 </a>

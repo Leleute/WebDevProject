@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1
 	{
 		font-size: 40px;
@@ -150,3 +151,145 @@ h1
 			
 
 		}
+=======
+h1
+	{
+		font-size: 40px;
+  text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #DC2315;
+  padding:16px;
+  font-weight:#BA4902;
+  text-align:center;
+  display:block;
+  margin:16px;
+
+}
+
+
+		#header{
+			background-image:url(paris2.jpg);	
+			background-color:paris.jpg;
+			color: white;
+			text-align: center;
+			padding: 15px;
+            height: 140px; 
+		}
+
+		#nav{
+			line-height: 30px;
+			background-color: #EFD3C5;
+			height: 40px;
+			width: 100%;
+			float: left;
+			padding-left: 500px;
+            padding-bottom: 30px;
+		}
+
+
+.btn { 
+
+    border:0; 
+    font-size: 10pt; 
+    padding: 0 20px
+    text-align: center ; 
+    color: white; 
+    text-shadow: 1px 1px 1px #000; 
+    border-radius: 10px; 
+    background-color: #F3B18B; 
+	height : 40px;
+	font-size: 12pt;
+
+}
+
+
+.btn:hover { 
+    background-color: white; 
+
+}
+
+	#section{
+			background-color: #EFD3C5;
+			width: auto 
+			float: left;
+			padding: 5px;
+			height: 5000px;
+        
+		}
+
+#flash {
+    
+    text-align: center ; 
+    font-size: 15pt; 
+    
+    
+}
+		#footer{
+			background-color: #976C52;
+			color: white;
+			clear: both;
+			text-align: center;
+			padding: 10px;
+            height: 5;
+		}
+
+		.account{
+			
+			position: absolute; 
+			top: 10px;
+			left: 1210px;
+			width : 35px; 
+			height: 35px;
+			
+		}
+
+		.basket{
+			
+			position: absolute; 
+			top: 50px;
+			left: 1210px;
+			width : 35px; 
+			height: 55px;
+			
+		}
+		
+		.ece{
+			
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width : 140px; 
+			height: 140px;
+			
+		}
+		
+		.sandale{
+			
+			position: center;
+			top: 300px;
+			left: 315px;
+			width : 750px; 
+			height: 440px;
+			
+		}
+		
+		.theatre{
+			
+			position: absolute;
+			top: 818px;
+			left: 515px;
+			width : 440px; 
+			height: 750px;
+			
+		}
+		
+		.tv{
+			
+			position: absolute;
+			top: 1618px;
+			left: 415px;
+			/*width : 440px; 
+			height: 750px;*/
+			
+		}
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034

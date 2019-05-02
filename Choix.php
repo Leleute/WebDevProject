@@ -75,11 +75,19 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 
 <div class= centre2>
 <h2 class="text-center">Connexion</h2>
+<<<<<<< HEAD
 
 <a href= "connexionAcheteur.php"> Acheteur    </a><br>
 <a href= "connextionVendeur.php"> Vendeur    </a><br>
 <a href= "connexionAdmin.php"> Admin </a><br>
 
+=======
+<ul>
+<li><a href= "connexionAcheteur.php"> Acheteur    </a></li>
+<li><a href= "Livre.php"> Vendeur    </a></li>
+<li><a href= "Livre.php"> Admin </a></li>
+</ul>
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
 </div>
 
 	</center>

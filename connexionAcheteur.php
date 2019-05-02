@@ -11,6 +11,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script
 src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         
+<<<<<<< HEAD
     
 	<title>ECE AMAZON</title>	
 	<link rel="stylesheet" type="text/css" href="vetstyleH.css">
@@ -21,12 +22,36 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
     <style type="text/css" >
         
        
+=======
+        
+        <title>ECE AMAZON</title>   
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css" >
+        
+        h2{ 
+        text-align: center; 
+        }
+        
+        .color{ 
+        background-color: azure; 
+            height: 800px; 
+        }
+        
+        h5{
+            text-align: center; 
+            
+        }
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
         .aucentre {
   margin: 0 auto;
   width: 400px;
   padding: 1em;
+<<<<<<< HEAD
     background-color: #DAB098; 
   border: 1px solid #DAB098;
+=======
+  border: 1px solid #CCC;
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
   border-radius: 1em;
 }
        
@@ -37,6 +62,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
     
    
     <div id="header">
+<<<<<<< HEAD
         
 			<h1>BIENVENUE A ECE AMAZON </h1>
 			<img class="account" src="account.png" width="30" height="30">
@@ -46,13 +72,22 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
 			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
+=======
+        <h1>BIENVENUE A ECE AMAZON </h1>
+            
+            <img class="ece" src="ece.jpg">
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
             
              
          
     </div>
                 
           
+<<<<<<< HEAD
     <div id="section">  
+=======
+        
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
         <div class="color">  
         <br><br><br>
       <div class="aucentre">
@@ -63,7 +98,10 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
                     <table> 
                     
                      <h5> Connexion a votre compte Acheteur</h5>
+<<<<<<< HEAD
 					 
+=======
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
                         
                         <tr> 
                         
@@ -99,7 +137,11 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
                 <div class="col-sm-2">  </div>
                 
            
+<<<<<<< HEAD
         </div>    
+=======
+            
+>>>>>>> 7d7941bf7f52a4a6e5ce41b06517e34ba1503034
          
     
       <div id="footer">
