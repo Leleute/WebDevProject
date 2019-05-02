@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,24 +11,22 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script
 src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         
-        
-        <title>ECE AMAZON</title>   
-    <link rel="stylesheet" type="text/css" href="style.css">
+    
+	<title>ECE AMAZON</title>	
+	<link rel="stylesheet" type="text/css" href="vetstyleH.css">
+	
+	
+     
+		
     <style type="text/css" >
         
-        .color{ 
-        background-color: azure; 
-            height: 800px; 
-        }
-        h2{ 
-        text-align: center; 
-        }
        
         .aucentre {
   margin: 0 auto;
   width: 400px;
   padding: 1em;
-  border: 1px solid #CCC;
+    background-color: #DAB098; 
+  border: 1px solid #DAB098;
   border-radius: 1em;
 }
        
@@ -37,14 +34,24 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </head>    
     
 <body>
- <div id="header">
-        <h1>BIENVENUE A ECE AMAZON </h1>
-            
-            <img class="ece" src="ece.jpg">
+    
+   
+    <div id="header">
+        
+			<h1>BIENVENUE A ECE AMAZON </h1>
+			<img class="account" src="account.png" width="30" height="30">
+			<img class="basket" src="basket.png" width="30" height="30">
+			<img class="ece" src="ece.jpg">
+			
+			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
+		
             
              
          
     </div>
+
+	<div id="section">
                 
           
         
@@ -56,9 +63,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 
  <?php
 $login = isset($_POST["login1"])? $_POST["login1"] : "";
-
 $mdp = isset($_POST["mdp1"])? $_POST["mdp1"] : "";
-
 $database = "projectweb";
             $db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
@@ -67,17 +72,13 @@ $database = "projectweb";
              {
             $sql = "SELECT Login,Mdp,ID FROM acheteur WHERE Login LIKE '%$login%' AND Mdp  LIKE '%$mdp%'";
             $result = mysqli_query($db_handle, $sql);
-
            if (mysqli_num_rows($result) == 0) {
 //l'acheteur recherché n'existe pas
 echo "Acheteur not found";
 } else {
 	
             $data= mysqli_fetch_assoc($result);
-
     session_start();
-
-
 $_SESSION['utilisateur'] = $data['ID'];
 ?>
 
@@ -88,7 +89,7 @@ $_SESSION['utilisateur'] = $data['ID'];
                      <h5> Vous etes connecté</h5><br><br>
                         <p>Bienvenue <?php echo " ".$data['Login']; ?></p>
                        
-                        <a href= "interface-site.php"> 
+                        <a href= "interface-site.html"> 
 				Retour à la page de vente
 			</a>
                     
@@ -103,8 +104,6 @@ $_SESSION['utilisateur'] = $data['ID'];
 }
 }}
 mysqli_close($db_handle);
-
-
 ?>
 
 
@@ -114,7 +113,7 @@ mysqli_close($db_handle);
                 
                 <div class="col-sm-2">  </div>
                 
-           
+    </div>
             
          
     
