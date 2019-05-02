@@ -22,7 +22,7 @@ $codeC = isset($_POST["codeC"])? $_POST["codeC"] : "";
 $database = "projectweb"; 
 
 
-$db_handle = mysqli_connect('localhost', 'root', '');
+$db_handle = mysqli_connect('localhost:8889', 'root', 'root','projectweb');
 $db_found = mysqli_select_db($db_handle, $database);
 if ($_POST["button2"]) {
 if ($db_found) {

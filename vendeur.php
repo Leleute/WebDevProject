@@ -15,10 +15,15 @@
 	</style>
 </head>
 <body>
+    
+ 
+        
+    
+    </div>
 	<?php
 	$vendeurID = 12;
 	$database = "projectweb";
-	$db_handle = mysqli_connect('localhost', 'root', '');
+	$db_handle = mysqli_connect('localhost:8889', 'root', 'root','projectweb');
 	$db_found = mysqli_select_db($db_handle, $database);
 
 	if ($db_found) 
@@ -33,7 +38,7 @@
 			echo $data['Pseudo'] . "<br>";
 			?>
 	<img class="PdP" src="images/<?php echo $data['PdP']; ?>" style = "width: 50%;">
-	<<img class="PdP" src="images/<?php echo $data['PdC']; ?>" style = "width: 50%;">
+	<img class="PdP" src="images/><?php echo $data['PdC']; ?>" style = "width: 50%;">
 	<?php
 		}
 	}
@@ -45,7 +50,7 @@
 	<?php
 	$vendeurID =12;
 	$database = "projectweb";
-	$db_handle = mysqli_connect('localhost', 'root', '');
+	$db_handle = mysqli_connect('localhost:8889', 'root', 'root','projectweb');
 	$db_found = mysqli_select_db($db_handle, $database);
 
 	if ($db_found) 
@@ -54,13 +59,17 @@
 		$sql .= " WHERE IDvendeur LIKE '%$vendeurID%'";
 		$result = mysqli_query($db_handle, $sql);
 		while ($data = mysqli_fetch_assoc($result)) {
-			echo $data['Taille']
+			/*echo $data['Taille']*/
 			echo $data['Nom']. "<br>";
 			echo $data['Prix'] . "<br>";
+             echo $data['AdressePhoto'] . "<br>";
+            echo $data['AdresseVideo'] . "<br>";
+            echo $data['Description'] . "<br>";
 			echo $data['Auteur'] . "<br>";
 			echo $data['Editeur'] . "<br>";
 			echo $data['Date'] . "<br>";
-			echo $data['Description'] . "<br>";
+			
+           
 			?>
 	<img class="PdP" src="imageslivres/<?php echo $data['AdressePhoto']; ?>" style = "width: 50%;">
 	<?php
@@ -75,7 +84,7 @@
        	<?php
 	$vendeurID =12;
 	$database = "projectweb";
-	$db_handle = mysqli_connect('localhost', 'root', '');
+	$db_handle = mysqli_connect('localhost:8889', 'root', 'root','projectweb');
 	$db_found = mysqli_select_db($db_handle, $database);
 
 	if ($db_found) 
@@ -103,7 +112,7 @@
        	<?php
 	$vendeurID =12;
 	$database = "projectweb";
-	$db_handle = mysqli_connect('localhost', 'root', '');
+	$db_handle = mysqli_connect('localhost:8889', 'root', 'root','projectweb');
 	$db_found = mysqli_select_db($db_handle, $database);
 
 	if ($db_found) 
@@ -128,7 +137,7 @@
        	<?php
 	$vendeurID =12;
 	$database = "projectweb";
-	$db_handle = mysqli_connect('localhost', 'root', '');
+	$db_handle = mysqli_connect('localhost:8889', 'root', 'root','projectweb');
 	$db_found = mysqli_select_db($db_handle, $database);
 
 	if ($db_found) 
@@ -150,7 +159,7 @@
 	}
 	?>
        </div>
-
+    </div>
 
 </body>
 </html>
