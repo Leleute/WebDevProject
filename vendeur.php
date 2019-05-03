@@ -161,7 +161,7 @@
 				}
 			}
 		}
-	}
+			}}
 	?>
     </div>
 	<div class="col-sm-3"> 
@@ -208,7 +208,7 @@
 				<?php
 			}
 		}
-	}
+			}}
 	?>
 	</div>
 	<div class="col-sm-3"> 
@@ -249,7 +249,7 @@
 				<?php
 			}
 		}
-	}
+			}}
 	?>
 	</div>
 	<div class="col-sm-3"> 

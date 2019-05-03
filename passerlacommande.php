@@ -36,7 +36,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 {
   text-align: center;
   width: 500px;
-  height: 500px;
+  height: 250px;
   position: fixed;
   top:150px;
   right: 425px;
@@ -62,6 +62,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			
 			 <?php 
       session_start();
+      $ok=0;
       if($_SESSION['utilisateur']==0 || $_SESSION['utilisateur']== null)
       {?><a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a><?php  }
       else{
@@ -174,7 +175,7 @@ $database = "projectweb";
 </script>
 <?php
 } else {
-
+$ok=1;
 ?>
 <div class="merci">
   <br><br>
@@ -190,9 +191,22 @@ $database = "projectweb";
 
   
           <?php
-          $ach = $_SESSION["utilisateur"];
-         
-            $sql = "SELECT IDAcheteur,IDObjet,categorie FROM panier WHERE IDAcheteur LIKE '%$ach%' ";
+            }}}
+        mysqli_close($db_handle);
+?> 
+
+
+<?php 
+if ($ok==1) {
+  $ach = $_SESSION["utilisateur"];
+  $database = "projectweb";
+  $prixtot = 0;
+      $db_handle = mysqli_connect('localhost', 'root','');
+            $db_found = mysqli_select_db($db_handle, $database);
+            if ($db_found)
+              //WHERE Email LIKE '%$email%'"
+            {
+            $sql = "SELECT * FROM panier WHERE IDAcheteur LIKE '%$ach%'";
             $result = mysqli_query($db_handle, $sql);
             while ($donneesPanier = mysqli_fetch_assoc($result))
             {
@@ -201,23 +215,63 @@ $database = "projectweb";
                 $IDobj = $donneesPanier["IDObjet"];
                 $sqll = "SELECT * FROM livres WHERE ID LIKE '%$IDobj%'";
                 $resultl = mysqli_query($db_handle, $sqll);
-                if (mysqli_num_rows($resultl) == 0) {
-//le livre n'existe pas
-} else {
-$sqll = "DELETE FROM livres";
-$sqll .= " WHERE ID = $IDobj";
-$resultl = mysqli_query($db_handle, $sql);
-
-}
+                while ($donneeslivres = mysqli_fetch_assoc($resultl))
+                {
+                  $sqll="DELETE FROM livres";
+                  $sqll .= " WHERE ID = $IDobj";
+                  $resultl = mysqli_query($db_handle, $sqll);
+                }
+              }
+              if($donneesPanier['categorie'] == "musiques")
+              {
+                $IDobj = $donneesPanier["IDObjet"];
+                $sqll = "SELECT * FROM musiques WHERE ID LIKE '%$IDobj%'";
+                $resultl = mysqli_query($db_handle, $sqll);
+                while ($donneeslivres = mysqli_fetch_assoc($resultl))
+                {
+                  $sqll="DELETE FROM musiques";
+                  $sqll .= " WHERE ID = $IDobj";
+                  $resultl = mysqli_query($db_handle, $sqll);
+                }
+              }if($donneesPanier['categorie'] == "sports")
+              {
+                $IDobj = $donneesPanier["IDObjet"];
+                $sqll = "SELECT * FROM sportetloisir WHERE ID LIKE '%$IDobj%'";
+                $resultl = mysqli_query($db_handle, $sqll);
+                while ($donneeslivres = mysqli_fetch_assoc($resultl))
+                {
+                  $sqll="DELETE FROM sportetloisir";
+                  $sqll .= " WHERE ID = $IDobj";
+                  $resultl = mysqli_query($db_handle, $sqll);
+                }
+              }if($donneesPanier['categorie'] == "vetement")
+              {
+                $IDobj = $donneesPanier["IDObjet"];
+                $sqll = "SELECT * FROM vetement WHERE ID LIKE '%$IDobj%'";
+                $resultl = mysqli_query($db_handle, $sqll);
+                while ($donneeslivres = mysqli_fetch_assoc($resultl))
+                {
+                  $sqll="DELETE FROM vetement";
+                  $sqll .= " WHERE ID = $IDobj";
+                  $resultl = mysqli_query($db_handle, $sqll);
+                }
+              }
+              $sql= "DELETE FROM panier";
+              $sql.= " WHERE IDAcheteur = $ach";
+              $result= mysqli_query($db_handle, $sql);
             }
+          }
+        }
+ mysqli_close($db_handle);
 
-            $sql ="DELETE FROM panier";
 
-          
-          
-        }}}}
-        mysqli_close($db_handle);
-?> 
+?>
+
+
+
+
+
+
       <div id="footer">
         Droit d'auteur | Copyright &copy; 2019, Mouna , Matthieu, Pablo et Thomas 
     </div>

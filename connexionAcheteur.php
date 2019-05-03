@@ -68,14 +68,14 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
                         <tr> 
                         
                         <td> login : </td>
-                            <td> <input type="text" name="login1"> </td>
+                            <td> <input type="text" name="login1" required > </td>
                         </tr>
                          <tr>
                         <td> <br>  </td>
                     </tr>
                         <tr> 
                         <td> Mot de Passe :  </td>
-                        <td> <input type="text" name="mdp1"></td>
+                        <td> <input type="text" name="mdp1" required ></td>
                         </tr>
                      <tr>
                         <td> <br> <br> </td>

@@ -26,18 +26,23 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </head>
 
 <body>
+    
+    <a href= "menuadmin.php">
+    <img class="home" src="home.png"></a>
+    
 <form action = "pageadmin.php" method="post">
 <form action = "pageadmin.php" method="post">
+    
 	<?php  
 $id = isset($_POST["ID"])? $_POST["ID"] : "";
 $database = "projectweb";
 //connectez-vous dans votre BDD
 //Rappel: votre serveur = localhost et votre login = root et votre password = <rien>
-$db_handle = mysqli_connect('localhost', 'root', '');
+$db_handle = mysqli_connect('localhost:8889', 'root', 'root','projectweb');
 $db_found = mysqli_select_db($db_handle, $database);
-//*** Partie Recherche d'un livre ***
+//*** Partie Recherche d'un vendeur***
 
-//*** Partie Ajout d'un nouveau livre ***
+//*** Partie suppresion d'un vendeur ***
 
 if ($db_found) { 
 	session_start();
@@ -62,6 +67,7 @@ $result = mysqli_query($db_handle, $sql);
 }
 }
 }
+    
 else { echo "Database not found"; }
 
 
@@ -92,7 +98,7 @@ mysqli_close($db_handle);
 				<td style="text-align: center; padding-left: 200px;">
 					<?php
 			$database = "projectweb";
-			$db_handle = mysqli_connect('localhost', 'root', '');
+			$db_handle = mysqli_connect('localhost:8889', 'root', 'root','projectweb');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
              {
@@ -431,10 +437,16 @@ mysqli_close($db_handle);
 	
 	</div>
 		
-	<div id="footer">
-		Droit d'auteur | Copyright &copy; 2019, ECE AMAZON 
+	 <div id="footer">
+		Droit d'auteur | Copyright &copy; 2019, ECE AMAZON 37, quai de Grenelle, 75015 Paris, France <br>
+        <a href="mailto: hu.thomas.mairui@gmail.com"> 
+        Nous envoyé un mail 
+        </a> <br> 
+        
+ 
+ +33 01 02 03 04 05 <br>
+ 
 	</div>
-
 
 
 
