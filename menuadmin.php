@@ -43,9 +43,11 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			</a>
 
 			<button type="submit" class=" btn " type="button"><a href="pageadmin.php"> Consulter </a>  </button>
+<?php 
+session_start();
+$_SESSION['admin'] = 0; ?>
 
-
- 			 <button type="submit" class=" btn " type="button"><a href="#"> Ajouter </a>  </button>
+ 			 <button type="submit" class=" btn " type="button"><a href="#"> Ajouter des produits</a>  </button>
 			
 			 
 			

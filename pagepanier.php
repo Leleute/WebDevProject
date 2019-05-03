@@ -18,8 +18,6 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </head>
 
 <body>
-<form action = "pageadmin.php" method="post">
-<form action = "pageadmin.php" method="post">
 	<div id="header">
 		<h1>BIENVENUE A ECE AMAZON </h1>
 			<img class="account" src="account.png" width="30" height="30">
