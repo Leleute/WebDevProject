@@ -95,7 +95,7 @@ mysqli_close($db_handle);
 			<?php
 			
 			$database = "projectweb";
-			$db_handle = mysqli_connect('localhost:8889', 'root','root', 'projectweb');
+			$db_handle = mysqli_connect('localhost', 'root','');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
              {

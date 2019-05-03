@@ -16,7 +16,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 <link rel="stylesheet" type="text/css" href="styles.css">
 	
 	
-	<title>ECE AMAZON</title>
+	<title>ECE AMAZON</title>	
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<style >	
 	</style>
@@ -60,12 +60,11 @@ mysqli_close($db_handle);
 			
 			 <a href="pagepanier.php" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
-		
 	</div>
                 <!-- boutton plusieur choix --> 
                 
                 
-         <div>      
+                
 	<div id="nav">
          <button type="submit" class=" btn " type="button"><a href="interface-site.html"> Accueil </a>  </button>
         
@@ -80,21 +79,24 @@ mysqli_close($db_handle);
         <button type="submit" class=" btn  " type="button"> <a href="vetementH.php"> Vetements </a></button>
         
 
-       
+        
+      
          
          	</div> 
-    </div>  
+   
+    
 	<div id="section">
 
 		<center>
 		
-			<p style="background-color:#EFD3C5; color: #469533;  font-size: 200%;"> <B> Sports et loisirs</B></p>
-            <br><br> 
+			<p style="background-color:#EFD3C5; color: #469533;  font-size: 200%; "> <B> Musique</B></p>
+            <br><br>
 			
-			
+
+
 			<?php
 			$database = "projectweb";
-			$db_handle = mysqli_connect('localhost', 'root', '');
+			$db_handle = mysqli_connect('localhost', 'root');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
              {
@@ -104,27 +106,32 @@ mysqli_close($db_handle);
             while ($donnees = mysqli_fetch_assoc($result))
             {
             	?>
-            	 
-            	 
-            	  <div class="row"> 
+            
+            <div class="row"> 
             	 
             	 
             	<div class="col-xs-4"> </div>
 			 
-			 
 			 <div class="col-xs-5">
-<div class="thumbnail"  style="background-color:#EFD3C5;" >
-<a href="imagessport/<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
-<img class="livresvente" src="imagessport<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;">
+                 
+<div class="thumbnail" style="background-color:#EFD3C5;">
+<a href="imagesmusiques/<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
+<img class="livresvente" src="imagesmusiques<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;"><br><br>
 </a>
+
 <div class="caption">
 <h2><?php echo $donnees['Nom']; ?></h2>
-<ul>
-Prix : <?php echo $donnees['Prix']; ?>
 
-</ul>
-<p> <?php echo $donnees['Description']; ?></p>
-<?php
+Prix : <?php echo $donnees['Prix']; ?> <br>
+
+
+<a  href="<?php echo $donnees['AdresseVideo']; ?>" target="_blank"> <br>
+<video width="240"  height="160" src="<?php echo $donnees['AdresseVideo']; ?>"  controls autobuffer>
+
+</video>
+</a>
+<p> <?php echo $donnees['Description']; ?></p> 
+ 			<?php
 $IDach = $_SESSION["utilisateur"];
 //$IDach = $_SESSION["utilisateur"];
 if(!empty($_POST['Test']) && !empty($IDach)) {
@@ -134,7 +141,7 @@ if(!empty($_POST['Test']) && !empty($IDach)) {
 //*** Partie Ajout d'un nouveau livre ***
 
 $IDobj = $_POST['Test'];
-$categorie = "Sport";
+$categorie = "sports";
 
 $sql = "INSERT INTO panier(ID, IDAcheteur, IDObjet, categorie)
  VALUES(Null, '$IDach', '$IDobj', '$categorie')";
@@ -160,10 +167,9 @@ $_POST['Test'] = Null;
 
 </div>
 </div>
-                     
-           <div class="col-xs-3"></div>
-                      </div>
-            	
+                <div class="col-xs-3"> </div>
+
+                </div>
 <br><br><br>
 
             <?php
@@ -178,6 +184,9 @@ mysqli_close($db_handle);
 ?>
 
 
+
+			
+
 		</center>
 	
 	
@@ -186,7 +195,6 @@ mysqli_close($db_handle);
 			 
 			 
 	</div>
-		
 	<div id="footer">
 		Droit d'auteur | Copyright &copy; 2019, ECE AMAZON 37, quai de Grenelle, 75015 Paris, France <br>
         <a href="mailto: hu.thomas.mairui@gmail.com"> 
@@ -197,7 +205,6 @@ mysqli_close($db_handle);
  +33 01 02 03 04 05 <br>
  +33 01 03 02 05 04
 	</div>
-
 
 
 
