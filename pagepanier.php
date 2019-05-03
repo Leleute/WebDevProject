@@ -13,7 +13,15 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	
 	<title>ECE AMAZON</title>	
 	<link rel="stylesheet" type="text/css" href="vetstyleH.css">
-	<style >	
+	<style >
+	.aucentre {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+    background-color: #DAB098; 
+  border: 1px solid #DAB098;
+  border-radius: 1em;
+}	
 	</style>
 </head>
 
@@ -63,7 +71,6 @@ mysqli_close($db_handle);
 
 <br><br><br>
 	<?php
-	session_start();
 	$ach = $_SESSION["utilisateur"];
 	$database = "projectweb";
 	$prixtot = 0;
@@ -85,14 +92,20 @@ mysqli_close($db_handle);
             			while ($donneeslivres = mysqli_fetch_assoc($resultl))
             			{
             				
+            				
+            				?>
+            				<div class="aucentre">
+            				<img class="PdP" src="imageslivres/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 200px;";> <br><br>
+            				<?php
             				echo $donneeslivres['Nom'];
             				echo "<br>";
-            				echo $donneeslivres['Prix'];
+            				echo "Prix : ".$donneeslivres['Prix']."€";
+            				echo "<br>";
             				echo "<br>";
             				?>
-            				<img class="PdP" src="imageslivres/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 50%";>;
+            				</div>
+            				<br><br>
             				<?php
-            				echo "<br>";
             				$prixtot += $donneeslivres['Prix'];
 
             			}
@@ -119,7 +132,10 @@ mysqli_close($db_handle);
 
 	?>
 	<h1>Prix total  : </h1>
-	<h1><?php echo $prixtot; ?></h1>
+	<h1><?php echo $prixtot; $_SESSION["facture"]=$prixtot; $_SESSION["ok"]=0;?> €</h1>
+
+
+			<button type="submit" class=" btn " type="button"><a href="passerlacommande.php"> Passer la commande </a>  </button>
 
          
 
