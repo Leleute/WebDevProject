@@ -65,7 +65,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 $login = isset($_POST["login1"])? $_POST["login1"] : "";
 $mdp = isset($_POST["mdp1"])? $_POST["mdp1"] : "";
 $database = "projectweb";
-            $db_handle = mysqli_connect('localhost:8889', 'root', 'root','projectweb');
+            $db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($_POST["buttonCoAch"]) {
             if ($db_found)
@@ -89,7 +89,7 @@ $_SESSION['utilisateur'] = $data['ID'];
                      <h5> Vous etes connecté</h5><br><br>
                         <p>Bienvenue <?php echo " ".$data['Login']; ?></p>
                        
-                        <a href= "interface-site.html"> 
+                        <a href= "interface-site-co.php"> 
 				Retour à la page de vente
 			</a>
                     

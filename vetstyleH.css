@@ -59,7 +59,7 @@
 			width: auto 
 			float: left;
 			padding: 5px;
-			height: 5000px;
+			height: 2000px;
         
 		}
 
@@ -104,20 +104,20 @@
 		.home{
 			
 			position: absolute;
-			top: 155px;
-			left: 1210px;
-			width : 35px; 
-			height: 35px;
+			top: 85px;
+			left: 200px;
+			width : 60px; 
+			height: 60px;
 			
 		}
 		
 		.ece{
 			
 			position: absolute;
-			top: 8px;
-			left: 8px;
+			top: 0px;
+			left: 0px;
 			width : 140px; 
-			height: 140px;
+			height: 139px;
 			
 		}
 
