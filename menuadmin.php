@@ -103,9 +103,11 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 
 		<center>
 		
-		
-			<h3> Veux-tu consulter les vendeurs inscrits sur la page ou ajouter des produits ?<h3> <br><br> 
-			
+			<p style="background-color: white; color: #469533;  font-size: 200%;">Coucou Admin</p>
+			<p> Veux-tu consulter les vendeurs inscrits sur la page ou ajouter des produits ?<P>
+			<a href= "interface-site.html"> 
+				<img class="home" src="home.png">
+			</a>
 
 			<button type="submit" class=" btn " type="button"><a href="pageadmin.php"><B> Consulter le profil des Vendeurs </B></a>  </button>
 <?php 

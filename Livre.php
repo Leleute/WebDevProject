@@ -150,8 +150,7 @@ $_POST['Test'] = Null;
 ?>
  
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-	<input type="hidden" name="id" value="<?php echo $donnees['ID'];?>">
-	<input type="submit" name="Test" value="<?php echo $donnees['ID'];?>"
+	<input type="submit" name="Test" value="<?php echo $donnees['ID'];?>">
 	<form>
 
 
