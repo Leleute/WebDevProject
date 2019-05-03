@@ -13,7 +13,15 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	
 	<title>ECE AMAZON</title>	
 	<link rel="stylesheet" type="text/css" href="vetstyleH.css">
-	<style >	
+	<style >
+	.aucentre {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+    background-color: #DAB098; 
+  border: 1px solid #DAB098;
+  border-radius: 1em;
+}	
 	</style>
 </head>
 
@@ -63,7 +71,10 @@ mysqli_close($db_handle);
 
 <br><br><br>
 	<?php
+<<<<<<< HEAD
 	session_start();
+=======
+>>>>>>> fc80a13c2fa5cb1a7585f264dcc93c260d00edc8
 	$ach = $_SESSION["utilisateur"];
 	$database = "projectweb";
 	$prixtot = 0;
@@ -85,6 +96,7 @@ mysqli_close($db_handle);
             			while ($donneeslivres = mysqli_fetch_assoc($resultl))
             			{
             				
+<<<<<<< HEAD
             				echo $donneeslivres['Nom'];
             				echo "<br>";
             				echo $donneeslivres['Prix'];
@@ -105,13 +117,58 @@ mysqli_close($db_handle);
             	}
             	if($donneesPanier["categorie"] == "vetements")
             	{
+=======
+            				
+            				?>
+            				<div class="aucentre">
+            				<img class="PdP" src="imageslivres/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 200px;";> <br><br>
+            				<?php
+            				echo $donneeslivres['Nom'];
+            				echo "<br>";
+            				echo "Prix : ".$donneeslivres['Prix']."€";
+            				echo "<br>";
+            				echo "<br>";
+            				?>
+            				</div>
+            				<br><br>
+            				<?php
+            				$prixtot += $donneeslivres['Prix'];
+
+            			}
+            		}
+
+            	}
+            	if($donneesPanier["categorie"] == "musiques")
+            	{
+
+            	}
+            	if($donneesPanier["categorie"] == "sports")
+            	{
+
+            	}
+            	if($donneesPanier["categorie"] == "vetements")
+            	{
+
+>>>>>>> fc80a13c2fa5cb1a7585f264dcc93c260d00edc8
             	}
             }
             mysqli_close($db_handle);
         }
+<<<<<<< HEAD
 	?>
 	<h1>Prix total  : </h1>
 	<h1><?php echo $prixtot; ?></h1>
+=======
+
+
+
+	?>
+	<h1>Prix total  : </h1>
+	<h1><?php echo $prixtot; $_SESSION["facture"]=$prixtot; $_SESSION["ok"]=0;?> €</h1>
+
+
+			<button type="submit" class=" btn " type="button"><a href="passerlacommande.php"> Passer la commande </a>  </button>
+>>>>>>> fc80a13c2fa5cb1a7585f264dcc93c260d00edc8
 
          
 

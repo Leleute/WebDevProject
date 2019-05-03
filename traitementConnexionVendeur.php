@@ -74,7 +74,7 @@ $database = "projectweb";
             $result = mysqli_query($db_handle, $sql);
            if (mysqli_num_rows($result) == 0) {
 //l'acheteur recherché n'existe pas
-echo "Acheteur not found";
+echo "Vendeur not found";
 } else {
 	
             $data= mysqli_fetch_assoc($result);

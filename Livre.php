@@ -123,7 +123,7 @@ Date : <?php echo $donnees['Date']; ?><br>
 			<p id="demo"></p>
 			</form>-->
 <?php
-$IDach = 1;
+$IDach = $_SESSION["utilisateur"];
 //$IDach = $_SESSION["utilisateur"];
 if(!empty($_POST['Test']) && !empty($IDach)) {
 //connectez-vous dans votre BDD
@@ -147,8 +147,7 @@ $_POST['Test'] = Null;
 ?>
  
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-	<input type="hidden" name="id" value="<?php echo $donnees['ID'];?>">
-	<input type="submit" name="Test" value="<?php echo $donnees['ID'];?>"
+	<input type="submit" name="Test" value="<?php echo $donnees['ID'];?>">
 	<form>
 
 

@@ -57,7 +57,7 @@ mysqli_close($db_handle);
 }}
 			?>
 			
-			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
+			 <a href="pagepanier.php" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		
 	</div>

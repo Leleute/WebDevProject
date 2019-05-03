@@ -39,12 +39,10 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
     <div id="header">
         
 			<h1>BIENVENUE A ECE AMAZON </h1>
-			<img class="account" src="account.png" width="30" height="30">
-			<img class="basket" src="basket.png" width="30" height="30">
+			
 			<img class="ece" src="ece.jpg">
 			
-			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
-			 <a href="pagepanier.php" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
+			
 		
             
              
@@ -103,6 +101,7 @@ $_SESSION['utilisateur'] = $data['ID'];
                 <?php
 }
 }}
+$_SESSION['admin'] = 0;
 mysqli_close($db_handle);
 ?>
 

@@ -61,7 +61,7 @@
                 
 	
 		
-	<div id="section">
+	<div id="header1">
          
  
         
@@ -93,7 +93,6 @@
 	</center>
 	
 	<img class="PdP" src="bdd/<?php echo $data['PdP']; ?>" style = "width: 30%"; "left: 120px";>
-	
 	<img class="PdP" src="<?php echo $data['PdC']; ?>" style = "width: 30%"; "position:absolute";><br>
 
 	
@@ -107,6 +106,10 @@
 	
 	</div>
 	
+	</div>
+	
+	
+	<div id="section">
 	
 	
 	
