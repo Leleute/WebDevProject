@@ -95,8 +95,8 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 			 <div class="col-xs-5">
                  
 <div class="thumbnail" style="background-color:#EFD3C5;">
-<a href="<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
-<img class="livresvente" src="<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;"><br><br>
+<a href="imagesmusiques/<?php echo $donnees['AdressePhoto']; ?>" target="_blank">
+<img class="livresvente" src="imagesmusiques<?php echo $donnees['AdressePhoto']; ?>" style ="width: 50%;"><br><br>
 </a>
 
 <div class="caption">
@@ -114,7 +114,7 @@ Date : <?php echo $donnees['Date']; ?> <br>
 </a>
 <p> <?php echo $donnees['Description']; ?></p> 
  			<?php
-$IDach = 1;
+$IDach = $_SESSION["utilisateur"];
 //$IDach = $_SESSION["utilisateur"];
 if(!empty($_POST['Test']) && !empty($IDach)) {
 //connectez-vous dans votre BDD
