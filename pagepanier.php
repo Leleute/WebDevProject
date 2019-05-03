@@ -114,14 +114,89 @@ mysqli_close($db_handle);
             	}
             	if($donneesPanier["categorie"] == "musiques")
             	{
+            		$IDobj = $donneesPanier["IDObjet"];
+            		$sqll = "SELECT * FROM musiques WHERE ID LIKE '%$IDobj%'";
+            		$resultl = mysqli_query($db_handle, $sqll);
+            		{
+            			while ($donneeslivres = mysqli_fetch_assoc($resultl))
+            			{
+            				
+            				
+            				?>
+            				<div class="aucentre">
+            				<img class="PdP" src="imagesmusiques/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 200px;";> <br><br>
+            				<?php
+            				echo $donneeslivres['Nom'];
+            				echo "<br>";
+            				echo "Prix : ".$donneeslivres['Prix']."€";
+            				echo "<br>";
+            				echo "<br>";
+            				?>
+            				</div>
+            				<br><br>
+            				<?php
+            				$prixtot += $donneeslivres['Prix'];
+
+            			}
+            		}
 
             	}
             	if($donneesPanier["categorie"] == "sports")
             	{
+            		$IDobj = $donneesPanier["IDObjet"];
+            		$sqll = "SELECT * FROM sportetloisir WHERE ID LIKE '%$IDobj%'";
+            		$resultl = mysqli_query($db_handle, $sqll);
+            		{
+            			while ($donneeslivres = mysqli_fetch_assoc($resultl))
+            			{
+            				
+            				
+            				?>
+            				<div class="aucentre">
+            				<img class="PdP" src="imagessport/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 200px;";> <br><br>
+            				<?php
+            				echo $donneeslivres['Nom'];
+            				echo "<br>";
+            				echo "Prix : ".$donneeslivres['Prix']."€";
+            				echo "<br>";
+            				echo "<br>";
+            				?>
+            				</div>
+            				<br><br>
+            				<?php
+            				$prixtot += $donneeslivres['Prix'];
+
+            			}
+            		}
 
             	}
             	if($donneesPanier["categorie"] == "vetements")
             	{
+            		$IDobj = $donneesPanier["IDObjet"];
+            		$sqll = "SELECT * FROM vetement WHERE ID LIKE '%$IDobj%'";
+            		$resultl = mysqli_query($db_handle, $sqll);
+            		{
+            			while ($donneeslivres = mysqli_fetch_assoc($resultl))
+            			{
+            				
+            				
+            				?>
+            				<div class="aucentre">
+            				<img class="PdP" src="imagesvetements/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 200px;";> <br><br>
+            				<?php
+            				echo $donneeslivres['Nom'];
+            				echo "<br>";
+            				echo "Prix : ".$donneeslivres['Prix']."€";
+            				echo "<br>";
+            				echo "<br>";
+            				?>
+            				</div>
+            				<br><br>
+            				<?php
+            				$prixtot += $donneeslivres['Prix'];
+
+            			}
+            		}
 
             	}
             }
