@@ -1,5 +1,4 @@
 <?php
-var_dump($_FILES);
 //"images" = subdirectory for images in www directory
 $target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

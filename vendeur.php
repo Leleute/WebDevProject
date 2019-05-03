@@ -65,14 +65,35 @@
 			echo $data['Auteur'] . "<br>";
 			echo $data['Editeur'] . "<br>";
 			echo $data['Date'] . "<br>";
+
 			
            
 			?>
+			<?php
+
+			if(!empty($_POST['Test']))
+			{
+				$idobj = $data['ID'];
+				$sql1 = "DELETE FROM livres";
+				$sql1 .= " WHERE ID = $idobj";
+				echo $idobj;
+				$result1 = mysqli_query($db_handle, $sql1);
+				echo alert("Reussite");
+
+
+			}
+			?>
 	<img class="PdP" src="imageslivres/<?php echo $data['AdressePhoto']; ?>" style = "width: 50%;">
+			<h6>Supprimer l'objet : <h6>
+			<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+	<input type="submit" name="Test" value="<?php echo $data['ID']?>">
+
 	<?php
 		}
 	}
 	?>
+		<button type="submit" class=" btn " type="button">
+		<a href="AjoutItem.php"> Ajouter Item </a>  </button>
 
 
        </div>
@@ -149,44 +170,20 @@
 			echo $data['Description'] . "<br>";
 			?>
 	<img class="PdP" src="imagesvetement/<?php echo $data['AdressePhoto']; ?>" style = "width: 50%;">
-	<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-		    <?php
-    session_start();
-$IDach = $_SESSION["utilisateur"];
-//$IDach = $_SESSION["utilisateur"];
-if(!empty($_POST['Ajouter Item'])) {
-//connectez-vous dans votre BDD
-//Rappel: votre serveur = localhost et votre login = root et votre password = <rien>
-//*** Partie Recherche d'un livre ***
-//*** Partie Ajout d'un nouveau livre ***
 
-$IDobj = $_POST['Test'];
-/*$categorie = "livres";
-
-$sql = "INSERT INTO panier(ID, IDAcheteur, IDObjet, categorie)
- VALUES(Null, '$IDach', '$IDobj', '$categorie')";
-$result1 = mysqli_query($db_handle, $sql);
-echo "Fonctionne <br>";
-$_POST['Test'] = Null;
-//on affiche le livre ajouté$sql = "SELECT * FROM employes";
-
-//fermer la connexion
-    // ou echo afficher();*/
-}
-?>
-	<input type="submit" name="Test" value="<?php echo $data['ID']?>">
 	<form>
 	<?php
 
 		}
 	}
+	mysqli_close($db_handle);
 	?>
+</form>
        </div>
     </div>
 
 
  
-	<button type="submit" class=" btn " type="button"><a href="interface-site.html"> Ajouter Item </a>  </button>
 
 </body>
 </html>
