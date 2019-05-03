@@ -190,7 +190,32 @@ $database = "projectweb";
 
   
           <?php
-        }}}
+          $ach = $_SESSION["utilisateur"];
+         
+            $sql = "SELECT IDAcheteur,IDObjet,categorie FROM panier WHERE IDAcheteur LIKE '%$ach%' ";
+            $result = mysqli_query($db_handle, $sql);
+            while ($donneesPanier = mysqli_fetch_assoc($result))
+            {
+              if($donneesPanier['categorie'] == "livres")
+              {
+                $IDobj = $donneesPanier["IDObjet"];
+                $sqll = "SELECT * FROM livres WHERE ID LIKE '%$IDobj%'";
+                $resultl = mysqli_query($db_handle, $sqll);
+                if (mysqli_num_rows($resultl) == 0) {
+//le livre n'existe pas
+} else {
+$sqll = "DELETE FROM livres";
+$sqll .= " WHERE ID = $IDobj";
+$resultl = mysqli_query($db_handle, $sql);
+
+}
+            }
+
+            $sql ="DELETE FROM panier";
+
+          
+          
+        }}}}
         mysqli_close($db_handle);
 ?> 
       <div id="footer">
