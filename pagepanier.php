@@ -132,7 +132,7 @@ mysqli_close($db_handle);
 
 	?>
 	<h1>Prix total  : </h1>
-	<h1><?php echo $prixtot; $_SESSION["facture"]=$prixtot;?> €</h1>
+	<h1><?php echo $prixtot; $_SESSION["facture"]=$prixtot; $_SESSION["ok"]=0;?> €</h1>
 
 
 			<button type="submit" class=" btn " type="button"><a href="passerlacommande.php"> Passer la commande </a>  </button>
