@@ -37,7 +37,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 		<center>
 		
 			<p style="background-color: white; color: #469533;  font-size: 200%;">Coucou Admin</p>
-			<p> Veux-tu consulter les vendeurs inscrits sur la page ou ajouter un vendeur ?<P>
+			<p> Veux-tu consulter les vendeurs inscrits sur la page ou ajouter des produits ?<P>
 			<a href= "interface-site.html"> 
 				<img class="home" src="home.png">
 			</a>
