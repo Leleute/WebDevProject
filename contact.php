@@ -18,17 +18,37 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
+    
+    <style type="text/css" > 
+    
+    
+    .centre2 {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  background-color: #DAB098; 
+  border: 1px solid #CCC;
+  border-radius: 1em;
+    
+        
+}
+    
+    </style>
     </head>
     
     
     <body> 
  
 	<div id="header">
+		<h1>BIENVENUE A ECE AMAZON </h1>
+   
         
         
-        <h1>BIENVENUE A ECE AMAZON </h1>
-    
+        <!-- Menu horizontal deroulant --> 
         
+        
+        
+   
 
     <img class="account" src="account.png" width="30" height="30">
 			<img class="basket" src="basket.png" width="30" height="30">
@@ -46,7 +66,6 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
     <!-- Menu --> 
         
        <ul id="menu">
-           
 	<li><a href="#">Categorie</a>
 		<ul>
 			<li><a href="Livre.php">Livres</a></li>
@@ -78,41 +97,53 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 </ul>
         </div>
         
-       <div id="section">
-	
-         <div id="flash"> 
+        <center > <br>
+         <p id="centre" style="background-color: white; color: #469533;  font-size: 200%;">Pour nous Contacter </p>
         
        
-	<br> <br> <br> <br> 
-			<a href="venteflash.html" style="background-color: red; color: white;  font-size: 200%;">VENTE FLASH!! </a> 
- </div>
-			<br> 
         
-        <center>
-			<img class="sandales" src="sandales.jpg" >
-			
-			<img class="theatre" src="theatre.png">
-			
-			<img class="tv" src="tv.png">
         
-			     </center>
-	
-	</div>
+        <div id="section"> 
         
-	<div id="footer">
+            
+                
+                 <div class= centre2>
+                     
+            <p> <b> Vous pouvez nous contacter:  </b> <br><br><br>
+
+   Par telephone au <em> <b>  (+33) 06 10 48 88 02</b></em> <br><br>
+Par email à <a href="mailto:hu.thomas.mairui@gmail.com">ece-amazon@gmail.com</a><br><br> 
+ou Rendez-vous chez nous au <address> <b> 9 avenue Victor Hugo, 75016 Paris </b></address>
+
+                
+</p>
+        
+      
+            
+            </div>
+            <center> 
+               
+                
+            
+            </div>
+            
+              </center>
+        
+       
+
+            </div>
+       
+     <div id="footer">
 		Droit d'auteur | Copyright &copy; 2019, ECE AMAZON 37, quai de Grenelle, 75015 Paris, France <br>
         <a href="mailto: hu.thomas.mairui@gmail.com"> 
         Nous envoyé un mail 
         </a> <br> 
         
- +33 01 02 03 04 05 <br>
+ 
+ (+33) 06 10 48 88 02 <br>
+
 	</div>
-   
         
-   
-    </body> 
-    
-    
-    
-    
+        
+    </body>
 </html>
