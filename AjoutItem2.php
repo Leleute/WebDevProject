@@ -1,8 +1,8 @@
 <?php
 		session_start();
 		$IDvend = $_SESSION["utilisateur"];
-		echo $IDvend;
-		echo"<br>";
+		$quant = isset($_POST["quantite"])? $_POST["quantite"] : "";
+		$nom = isset($_POST["nom"])? $_POST["nom"] : "";
 		$nom = isset($_POST["nom"])? $_POST["nom"] : "";
 		$prix = isset($_POST["prix"])? $_POST["prix"] : "";
 		$auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
@@ -19,7 +19,7 @@
 		if($_POST["button"] == "Creez votre Livre")
 			{
 			$result = 0;
-			if($nom == "" || $prix == "" || $auteur == "" || $edit == "" || $date == "" || $desc == "")
+			if($nom == "" || $prix == "" || $auteur == "" || $edit == "" || $date == "" || $desc == "" || $quant < 1)
 			{
 				$result = 1;
 				echo "Il y a au moins un des composants obligatoires de vide";
@@ -90,9 +90,13 @@
 				if($result == 0 && $uploadOk == 1)
 				{
 					$adrphoto = basename( $_FILES["fileToUpload"]["name"]);
+						for ($i = 1; $i <= $quant; $i++) 
+						{
+
 					$sql = "INSERT INTO livres(ID, Nom, Prix, AdressePhoto, AdresseVideo, Description, Auteur, Editeur, Date, IDvendeur)
 					VALUES (NULL, '$nom', '$prix', '$adrphoto', '$video', '$desc', '$auteur', '$edit', '$date', '$IDvend')";
-					$result = mysqli_query($db_handle, $sql);
+				$result = mysqli_query($db_handle, $sql);
+			}
 				/// Affichage de la reussite !!
 				 echo '<p><a href="AjoutItem.php">ok</a></p>';
 					
@@ -102,7 +106,7 @@
 		if($_POST["button"] == "Creez votre Musique")
 		{
 			$result = 0;
-			if($nom == "" || $prix == "" || $auteur == "" || $edit == "" || $date == "" || $desc == "")
+			if($nom == "" || $prix == "" || $auteur == "" || $edit == "" || $date == "" || $desc == "" || $quant < 1)
 			{
 				$result = 1;
 				echo "Il y a au moins un des composants obligatoires de vide";
@@ -173,9 +177,12 @@
 				if($result == 0 && $uploadOk == 1)
 				{
 					$adrphoto = basename( $_FILES["fileToUpload"]["name"]);
+					for ($i = 1; $i <= $quant; $i++) 
+						{
 					$sql = "INSERT INTO musiques(ID, Nom, Prix, AdressePhoto, AdresseVideo, Description, Artiste, Label, Date, IDvendeur)
 					VALUES (NULL, '$nom', '$prix', '$adrphoto', '$video', '$desc', '$auteur', '$edit', '$date', '$IDvend')";
 					$result = mysqli_query($db_handle, $sql);
+				}
 				/// Affichage de la reussite !!
 				 echo '<p><a href="AjoutItem.php">lien</a></p>';
 					
@@ -185,7 +192,7 @@
 		if($_POST["button"] == "Creez votre Vetement")
 		{
 			$result = 0;
-			if($nom == "" || $prix == "" || $auteur == "" || $edit == "" || $desc == "" || $couleur == "")
+			if($nom == "" || $prix == "" || $auteur == "" || $edit == "" || $desc == "" || $couleur == "" || $quant < 1)
 			{
 				$result = 1;
 				echo "Il y a au moins un des composants obligatoires de vide";
@@ -223,7 +230,7 @@
 					$uploadOk = 0;
 				}
 					// Autoriser certains formats de fichier
-				if (($imageFileType == "jpg") || ($imageFileType == "png") || ($imageFileType == "jpeg")
+				if (($imageFileType == "jpg") || ($imageFileType == "png") || ($imageFileType == "jpeg" || $quant < 1)
 				|| ($imageFileType == "gif")) 
 				{
 					echo "<br>" . "Fichier autorisé. Format = JPG | JPEG| PNG | GIF.";
@@ -256,9 +263,12 @@
 				if($result == 0 && $uploadOk == 1)
 				{
 					$adrphoto = basename( $_FILES["fileToUpload"]["name"]);
+					for ($i = 1; $i <= $quant; $i++) 
+						{
 					$sql = "INSERT INTO vetement(ID, Nom, Prix, AdressePhoto, AdresseVideo, Description, Taille, Sexe, Couleur, IDvendeur)
 					VALUES (NULL, '$nom', '$prix', '$adrphoto', '$video', '$desc', '$auteur', '$edit', '$couleur', '$IDvend')";
 					$result = mysqli_query($db_handle, $sql);
+				}
 				/// Affichage de la reussite !!
 				 echo '<p><a href="AjoutItem.php">ok</a></p>';
 					
@@ -268,7 +278,7 @@
 		if($_POST["button"] == "Creez votre Item")
 		{
 			$result = 0;
-			if($nom == "" || $prix == "" || $desc == "")
+			if($nom == "" || $prix == "" || $desc == "" || $quant < 1)
 			{
 				$result = 1;
 				echo "Il y a au moins un des composants obligatoires de vide";
@@ -339,9 +349,12 @@
 				if($result == 0 && $uploadOk == 1)
 				{
 					$adrphoto = basename( $_FILES["fileToUpload"]["name"]);
+					for ($i = 1; $i <= $quant; $i++) 
+						{
 					$sql = "INSERT INTO sportetloisir(ID, Nom, Prix, AdressePhoto, AdresseVideo, Description, IDvendeur)
 					VALUES (NULL, '$nom', '$prix', '$adrphoto', '$video', '$desc', '$IDvend')";
 					$result = mysqli_query($db_handle, $sql);
+				}
 				/// Affichage de la reussite !!
 				 echo '<p><a href="AjoutItem.php">ok</a></p>';
 					
