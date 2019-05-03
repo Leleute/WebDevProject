@@ -60,7 +60,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 		<div class= "centre2">
     <table>
     	<?php
-    	$statut = isset($_POST["statut"])?$_POST["statut"] : "";
+    	$statut  = isset($_POST["statut"])?$_POST["statut"] : "";
 		if(empty($statut))
 		{
 		?>
@@ -79,6 +79,10 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 		{
 		?>
 		<form action="AjoutItem2.php" method="post" enctype="multipart/form-data">
+        <tr>
+            <td>Quantite a creer :</td>
+            <td><input type="number" name="quantite"></td>
+        </tr>
         <tr>
             <td>Nom :</td>
             <td><input type="text" name="nom"></td>
@@ -122,6 +126,10 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
     	{
     	?>
     		<form action="AjoutItem2.php" method="post" enctype="multipart/form-data">
+        <tr>
+            <td>Quantite a creer :</td>
+            <td><input type="number" name="quantite"></td>
+        </tr>
         <tr>
             <td>Nom :</td>
             <td><input type="text" name="nom"></td>
@@ -167,6 +175,10 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
     	?>
     		<form action="AjoutItem2.php" method="post" enctype="multipart/form-data">
         <tr>
+            <td>Quantite a creer :</td>
+            <td><input type="number" name="quantite"></td>
+        </tr>
+        <tr>
             <td>Nom :</td>
             <td><input type="text" name="nom"></td>
         </tr>
@@ -209,6 +221,10 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
     	{
     	?>
     		<form action="AjoutItem2.php" method="post" enctype="multipart/form-data">
+        <tr>
+            <td>Quantite a creer :</td>
+            <td><input type="number" name="quantite"></td>
+        </tr>
         <tr>
             <td>Nom :</td>
             <td><input type="text" name="nom"></td>
