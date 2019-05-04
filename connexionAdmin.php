@@ -96,10 +96,9 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
           <center>
               <br>
               
-        <p style="background-color: white; color: #469533;  font-size: 200%;">Connexion a votre compte admin</p>
+        <p style="background-color: white; color: #469533;  font-size: 200%;">Connexion a votre compte Admin</p>
 			
         </center>
-          
           
     <div id="section">  
         
