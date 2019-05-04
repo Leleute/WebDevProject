@@ -37,12 +37,14 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
     
    
     <div id="header">
-        
-			<h1>BIENVENUE A ECE AMAZON </h1>
-	
+        <h1>BIENVENUE A ECE AMAZON </h1>
+			<img class="account" src="account.png" width="30" height="30">
+			<img class="basket" src="basket.png" width="30" height="30">
 			<img class="ece" src="ece.jpg">
 			
-			
+			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
+		
 		
             
              
@@ -72,14 +74,14 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
                         <tr> 
                         
                         <td> login : </td>
-                            <td> <input type="text" name="login1"> </td>
+                            <td> <input type="text" name="login1" required> </td>
                         </tr>
                          <tr>
                         <td> <br>  </td>
                     </tr>
                         <tr> 
                         <td> Mot de Passe :  </td>
-                        <td> <input type="text" name="mdp1"></td>
+                        <td> <input type="text" name="mdp1" required></td>
                         </tr>
                      <tr>
                         <td> <br> <br> </td>

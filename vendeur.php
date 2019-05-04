@@ -53,7 +53,7 @@
         </div>
 			
 			
-			<a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+			<a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;"></a>
 			 <a href="pagepanier.html" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		
@@ -161,7 +161,7 @@
 				}
 			}
 		}
-			}}
+	}
 	?>
     </div>
 	<div class="col-sm-3"> 
@@ -208,7 +208,7 @@
 				<?php
 			}
 		}
-			}}
+	}
 	?>
 	</div>
 	<div class="col-sm-3"> 
@@ -249,7 +249,7 @@
 				<?php
 			}
 		}
-			}}
+	}
 	?>
 	</div>
 	<div class="col-sm-3"> 
@@ -304,6 +304,33 @@
 }
 	
 	?>
+	
+	
+	<?php 
+			
+			if($_SESSION['utilisateur']==0 || $_SESSION['utilisateur']== null)
+			{?><a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a><?php  }
+			else{
+			$database = "projectweb";
+            $db_handle = mysqli_connect('localhost', 'root', '');
+            $db_found = mysqli_select_db($db_handle, $database);
+            
+            $login = $_SESSION['utilisateur'];
+            if ($db_found)
+             {
+            $sql = "SELECT ID,Login FROM vendeur WHERE ID LIKE '%$login%'";
+            $result = mysqli_query($db_handle, $sql);
+           $data= mysqli_fetch_assoc($result);
+           ?>
+           <a href="decoVendeur.php" style="color: black; position : absolute; top: 20px; left: 1250px;"><?php echo $data['Login']; ?></a>
+           <?php 
+mysqli_close($db_handle);
+}}
+			?>
+	
+	
+	
+	
 	<input type="submit" name="Test" value="<?php echo $data['ID']?>">
 	<form> 
 	<button type="submit" class=" btn " type="button"><a href="AjoutItem.php"> Ajouter Item </a>  </button>
