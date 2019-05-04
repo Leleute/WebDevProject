@@ -122,6 +122,68 @@ echo "Acheteur not found";
     session_start();
 $_SESSION['utilisateur'] = $data['ID'];
 ?>
+
+			
+			<br><br>
+ <table> 
+                    
+                     <h5> Vous etes connecté</h5><br><br>
+                        <p>Bienvenue <?php echo " ".$data['Login']; ?></p>
+                       
+                        <a href= "menuadmin.php"> 
+				Suivant
+			</a>
+                    
+                    </table>
+                    
+                 
+                
+            
+                </div>
+                </div>
+                <?php
+}
+}}
+$_SESSION['admin'] = 0;
+mysqli_close($db_handle);
+?>
+
+
+
+
+<?php 
+			
+			if($_SESSION['utilisateur']==0 || $_SESSION['utilisateur']== null)
+			{?><a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a><?php  }
+			else{
+			$database = "projectweb";
+            $db_handle = mysqli_connect('localhost', 'root', '');
+            $db_found = mysqli_select_db($db_handle, $database);
+            
+            $login = $_SESSION['utilisateur'];
+            if ($db_found)
+             {
+            $sql = "SELECT ID,Login FROM admin WHERE ID LIKE '%$login%'";
+            $result = mysqli_query($db_handle, $sql);
+           $data= mysqli_fetch_assoc($result);
+           ?>
+           <a href="decoAdmin.php" style="color: black; position : absolute; top: 20px; left: 1250px;"><?php echo $data['Login']; ?></a>
+           <?php 
+mysqli_close($db_handle);
+}}
+			?>
+               
+                
+                
+                <div class="col-sm-2">  </div>
+                
+    </div>
+            
+         
+    
+      <div id="footer">
+        Droit d'auteur | Copyright &copy; 2019, Mouna , Matthieu, Pablo et Thomas 
+    </div>
         
              
     <div id="footer">

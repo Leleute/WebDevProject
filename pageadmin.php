@@ -14,14 +14,6 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	<title>ECE AMAZON</title>	
 	<link rel="stylesheet" type="text/css" href="vetstyleH.css">
 	<style >	
-	.aucentre {
-  margin: 0 auto;
-  width: 400px;
-  padding: 1em;
-    background-color: #DAB098; 
-  border: 1px solid #DAB098;
-  border-radius: 1em;
-}
 	</style>
 </head>
 
@@ -76,11 +68,11 @@ mysqli_close($db_handle);
 	<div id="header">
 		<h1>BIENVENUE A ECE AMAZON </h1>
 			<img class="account" src="account.png" width="30" height="30">
-		
+			<img class="basket" src="basket.png" width="30" height="30">
 			<img class="ece" src="ece.jpg">
 			
-			 <a href="interface-site.html" style="color: black; position : absolute; top: 20px; left: 1250px;">Deconnection</a>
-			
+			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;">Mon compte</a>
+			 <a href="pagepanier.php" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
 		
 		
 	</div>
@@ -89,6 +81,10 @@ mysqli_close($db_handle);
 	<center>
 			
 		 <p style="background-color: white; color: #469533;  font-size: 200%;">Vendeur(s) inscrits</p>
+			<a href= "interface-site.html"> 
+				<img class="home" src="home.png">
+			</a>
+
 			
 			<table>
 				
@@ -121,16 +117,20 @@ mysqli_close($db_handle);
 <img class="livresvente" src="<?php echo $donnees['PdC']; ?>" style ="width: 50%;">
 </a>
 <div class="caption">
-<h2>ID: <?php echo $donnees['ID']; ?> </h2>
+<h2><?php echo $donnees['ID']; ?> </h2>
 Pseudo : <?php echo $donnees['Login']; ?> <br>
 Email : <?php echo $donnees['Email']; ?> <br>
 Nom : <?php echo $donnees['Nom']; ?> <br>
 
 
  			
-			
-              
-
+			<FORM>
+			<input class="Supprimer vendeur" 
+			 type="button"
+			 value="SupprimerVendeur">
+	
+		
+			</FORM>
 			</div>
 </div>
 
@@ -149,53 +149,15 @@ echo "Database not found";
 mysqli_close($db_handle);
 ?>
 
-				</td>
-				<td style="text-align: center;padding-right: 200px">
-					  <div class="aucentre">
-					 <form action="pageadmin.php" method="post">
-                        
-                    <table> 
-                    
-                     <h5> Supprimer un vendeur</h5>
-					 
-                        
-                        <tr> 
-                        
-                        <td> Saisir son ID : </td>
-                            <td> <input type="text" name="ID"> </td>
-                        </tr>
-                         <tr>
-                        <td> <br>  </td>
-                    </tr>
-                        
-                     <tr>
-                        <td> <br> <br> </td>
-                    </tr>
-                         <td colspan="2" align="center">
-                <input type="submit" name="button" value="Supprimer">
-                </td>
-                        <?php 
-                        $_SESSION['admin'] =1;
-                         ?>
-                    
-                    </table>
-                    
-                    </form>
-                </div>
-				</td>
-			</table>
 
-			
-			
-
-
+<a left: 200px; href= "menuadmin.php"> 
+				Retour
+			</a>
 			
 
 		</center> 
 		
 	</div>
-    
-    
 	<?php
 {
 	if($_SESSION['utilisateur']==0 || $_SESSION['utilisateur']== null)
@@ -207,7 +169,7 @@ mysqli_close($db_handle);
 	else
 	{
 		$database = "projectweb";
-        $db_handle = mysqli_connect('localhost:8889', 'root', 'root', 'projectweb');
+        $db_handle = mysqli_connect('localhost', 'root', '');
         $db_found = mysqli_select_db($db_handle, $database);
         $id = $_SESSION['utilisateur'];
         if ($db_found)

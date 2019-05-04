@@ -36,7 +36,7 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 	<div id="section">
 	<center>
 			
-		 <p style="background-color: white; color: #469533;  font-size: 200%;">Creation compte vendeur</p>
+		 <p style="background-color: white; color: #469533;  font-size: 200%;">Creation compte acheteur</p>
 			<a href= "interface-site.html"> 
 				<img class="home" src="home.png">
 			</a>
