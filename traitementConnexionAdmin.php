@@ -1,69 +1,108 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html> 
 
+<html>
+<head> 
+    <meta charset="utf-8"> 
+    <title> ECE Amazon</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     
-    <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script
 src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <style type="text/css"> 
         
-    
-	<title>ECE AMAZON</title>	
-	<link rel="stylesheet" type="text/css" href="vetstyleH.css">
-	
-	
-     
-		
-    <style type="text/css" >
-        
-       
-        .aucentre {
+             .centre2 {
   margin: 0 auto;
-  width: 400px;
+  width: 800px;
   padding: 1em;
-    background-color: #DAB098; 
-  border: 1px solid #DAB098;
+  background-color: #DAB098; 
+  border: 1px solid #CCC;
   border-radius: 1em;
-}
-       
-    </style>
-</head>    
     
-<body>
-    
-   
-    <div id="header">
         
-			<h1>BIENVENUE A ECE AMAZON </h1>
-			<img class="account" src="account.png" width="30" height="30">
+}
+        h3{
+            text-align: center; 
+        }
+    </style>
+    </head>
+    
+    
+    <body> 
+ 
+	<div id="header">
+        
+        
+        <h1>BIENVENUE A ECE AMAZON </h1>
+    
+        
+
+    <img class="account" src="account.png" width="30" height="30">
 			<img class="basket" src="basket.png" width="30" height="30">
-			<img class="ece" src="ece.jpg">
+        
+        <div id="logo"> 
+        <img class="ece" src="ece.jpg">
+        </div>
+        
+    <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1260px;">Mon compte</a>
+        
+			 <a href="pagepanier.php" style="color: black; position : absolute; top: 80px; left: 1260px;">Mon panier</a>
+    
+    <a href= "interface-site.html">
+                <img class="home" src="home.png"></a>
+    <!-- Menu --> 
+        
+       <ul id="menu">
+           
+	<li><a href="#">Categorie</a>
+		<ul>
+			<li><a href="Livre.php">Livres</a></li>
+			<li><a href="Musique.php">Musique</a></li>
+			<li><a href="Sport.php">Sports et Loisirs</a></li>
+			<li><a href="vetementH.php">Vetements</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Connexion</a>
+		<ul>
+			<li><a href="connexionAdmin.php">Admin</a></li>
+			<li><a href="connexionAcheteur.php">Acheteur</a></li>
+			<li><a href="connextionVendeur.php">Vendeur</a></li>
 			
-			 <a href="Choix.php" style="color: black; position : absolute; top: 20px; left: 1250px;"></a>
-			 <a href="#" style="color: black; position : absolute; top: 50px; left: 1250px;">Mon panier</a>
+		</ul>
+	</li>
+	<li><a href="#">Inscription</a>
+		<ul>
+			<li><a href="CreaCompteAch.html">Acheteur</a></li>
+			<li><a href="CreaCompteVendeur.html">Vendeur</a></li>
+		</ul>
+	</li>
+	<li><a href="qui.html">Qui Sommes Nous</a>
 		
+	</li>
+           <li><a href="contact.php">Contact</a>
+		
+	</li>
+</ul>
+        </div>     
+          <center>
+              <br>
+              
+        <p style="background-color: white; color: #469533;  font-size: 200%;">Bienvenue sur votre compte Admin</p>
 			
-		
-            
-             
-         
-    </div>
+        </center>
 
 	<div id="section">
                 
-          
-        
-        <div class="color">  
-        <br><br><br>
-      <div class="aucentre">
-
-
-
- <?php
+<?php
 $login = isset($_POST["login1"])? $_POST["login1"] : "";
 $mdp = isset($_POST["mdp1"])? $_POST["mdp1"] : "";
 $database = "projectweb";
@@ -72,11 +111,11 @@ $database = "projectweb";
             if ($_POST["buttonCoAch"]) {
             if ($db_found)
              {
-            $sql = "SELECT Login,Mdp,ID FROM admin WHERE Login LIKE '%$login%' AND Mdp  LIKE '%$mdp%'";
+            $sql = "SELECT Login,Mdp,ID FROM acheteur WHERE Login LIKE '%$login%' AND Mdp  LIKE '%$mdp%'";
             $result = mysqli_query($db_handle, $sql);
            if (mysqli_num_rows($result) == 0) {
 //l'acheteur recherché n'existe pas
-echo "Admin not found";
+echo "Acheteur not found";
 } else {
 	
             $data= mysqli_fetch_assoc($result);
@@ -145,6 +184,18 @@ mysqli_close($db_handle);
       <div id="footer">
         Droit d'auteur | Copyright &copy; 2019, Mouna , Matthieu, Pablo et Thomas 
     </div>
+        
+             
+    <div id="footer">
+		Droit d'auteur | Copyright &copy; 2019, ECE AMAZON 37, quai de Grenelle, 75015 Paris, France <br>
+        <a href="mailto: hu.thomas.mairui@gmail.com"> 
+        Nous envoyé un mail 
+        </a> <br> 
+        
+ 
+ +33 01 02 03 04 05 <br>
+ 
+	</div>
 
 
 </body>

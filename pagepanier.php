@@ -71,10 +71,8 @@ mysqli_close($db_handle);
 
 <br><br><br>
 	<?php
-<<<<<<< HEAD
-	session_start();
-=======
->>>>>>> fc80a13c2fa5cb1a7585f264dcc93c260d00edc8
+
+	
 	$ach = $_SESSION["utilisateur"];
 	$database = "projectweb";
 	$prixtot = 0;
@@ -96,32 +94,38 @@ mysqli_close($db_handle);
             			while ($donneeslivres = mysqli_fetch_assoc($resultl))
             			{
             				
-<<<<<<< HEAD
+
+            				
+            				?>
+            				<div class="aucentre">
+            				<img class="PdP" src="imageslivres/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 200px";>;
+            				<?php
+            				echo "<br>";
             				echo $donneeslivres['Nom'];
             				echo "<br>";
             				echo $donneeslivres['Prix'];
             				echo "<br>";
-            				?>
-            				<img class="PdP" src="imageslivres/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 50%";>;
-            				<?php
-            				echo "<br>";
             				$prixtot += $donneeslivres['Prix'];
+            				?>
+            				</div>
+            				<br><br>
+            				<?php
             			}
             		}
             	}
             	if($donneesPanier["categorie"] == "musiques")
             	{
-            	}
-            	if($donneesPanier["categorie"] == "sports")
-            	{
-            	}
-            	if($donneesPanier["categorie"] == "vetements")
-            	{
-=======
+            		$IDobj = $donneesPanier["IDObjet"];
+            		$sqll = "SELECT * FROM musiques WHERE ID LIKE '%$IDobj%'";
+            		$resultl = mysqli_query($db_handle, $sqll);
+            		{
+            			while ($donneeslivres = mysqli_fetch_assoc($resultl))
+            			{
+            				
             				
             				?>
             				<div class="aucentre">
-            				<img class="PdP" src="imageslivres/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 200px;";> <br><br>
+            				<img class="PdP" src="imagesmusiques/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 200px;";> <br><br>
             				<?php
             				echo $donneeslivres['Nom'];
             				echo "<br>";
@@ -138,27 +142,69 @@ mysqli_close($db_handle);
             		}
 
             	}
-            	if($donneesPanier["categorie"] == "musiques")
-            	{
-
-            	}
             	if($donneesPanier["categorie"] == "sports")
             	{
+            		$IDobj = $donneesPanier["IDObjet"];
+            		$sqll = "SELECT * FROM sportetloisir WHERE ID LIKE '%$IDobj%'";
+            		$resultl = mysqli_query($db_handle, $sqll);
+            		{
+            			while ($donneeslivres = mysqli_fetch_assoc($resultl))
+            			{
+            				
+            				
+            				?>
+            				<div class="aucentre">
+            				<img class="PdP" src="imagessport/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 200px;";> <br><br>
+            				<?php
+            				echo $donneeslivres['Nom'];
+            				echo "<br>";
+            				echo "Prix : ".$donneeslivres['Prix']."€";
+            				echo "<br>";
+            				echo "<br>";
+            				?>
+            				</div>
+            				<br><br>
+            				<?php
+            				$prixtot += $donneeslivres['Prix'];
+
+            			}
+            		}
 
             	}
             	if($donneesPanier["categorie"] == "vetements")
             	{
+            		$IDobj = $donneesPanier["IDObjet"];
+            		$sqll = "SELECT * FROM vetement WHERE ID LIKE '%$IDobj%'";
+            		$resultl = mysqli_query($db_handle, $sqll);
+            		{
+            			while ($donneeslivres = mysqli_fetch_assoc($resultl))
+            			{
+            				
+            				
+            				?>
+            				<div class="aucentre">
+            				<img class="PdP" src="imagesvetements/<?php echo $donneeslivres['AdressePhoto']; ?>" style = "width: 200px;";> <br><br>
+            				<?php
+            				echo $donneeslivres['Nom'];
+            				echo "<br>";
+            				echo "Prix : ".$donneeslivres['Prix']."€";
+            				echo "<br>";
+            				echo "<br>";
+            				?>
+            				</div>
+            				<br><br>
+            				<?php
+            				$prixtot += $donneeslivres['Prix'];
 
->>>>>>> fc80a13c2fa5cb1a7585f264dcc93c260d00edc8
+            			}
+            		}
+
             	}
-            }
+            	
+            		}
             mysqli_close($db_handle);
         }
-<<<<<<< HEAD
-	?>
-	<h1>Prix total  : </h1>
-	<h1><?php echo $prixtot; ?></h1>
-=======
+	
 
 
 
@@ -168,7 +214,7 @@ mysqli_close($db_handle);
 
 
 			<button type="submit" class=" btn " type="button"><a href="passerlacommande.php"> Passer la commande </a>  </button>
->>>>>>> fc80a13c2fa5cb1a7585f264dcc93c260d00edc8
+
 
          
 

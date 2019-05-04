@@ -62,20 +62,26 @@ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></s
 
 
  <?php
+          
 $login = isset($_POST["login1"])? $_POST["login1"] : "";
 $mdp = isset($_POST["mdp1"])? $_POST["mdp1"] : "";
 $database = "projectweb";
-            $db_handle = mysqli_connect('localhost', 'root', '');
+            $db_handle = mysqli_connect('localhost:8889', 'root', 'root','projectweb');
             $db_found = mysqli_select_db($db_handle, $database);
+          
             if ($_POST["buttonCoAch"]) {
+                
             if ($db_found)
              {
+                
             $sql = "SELECT Login,Mdp,ID FROM vendeur WHERE Login LIKE '%$login%' AND Mdp  LIKE '%$mdp%'";
             $result = mysqli_query($db_handle, $sql);
-           if (mysqli_num_rows($result) == 0) {
+           if (mysqli_num_rows($result) == 0)
+           {
 //l'acheteur recherché n'existe pas
 echo "Vendeur not found";
-} else {
+} 
+        
 	
             $data= mysqli_fetch_assoc($result);
     session_start();
@@ -100,7 +106,7 @@ $_SESSION['utilisateur'] = $data['ID'];
             
                 </div>
                 </div>
-                <?php
+                
 }
 }}
 mysqli_close($db_handle);

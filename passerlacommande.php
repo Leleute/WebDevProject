@@ -233,7 +233,7 @@ if ($ok==1) {
                   $sqll .= " WHERE ID = $IDobj";
                   $resultl = mysqli_query($db_handle, $sqll);
                 }
-              }if($donneesPanier['categorie'] == "sportetloisir")
+              }if($donneesPanier['categorie'] == "sports")
               {
                 $IDobj = $donneesPanier["IDObjet"];
                 $sqll = "SELECT * FROM sportetloisir WHERE ID LIKE '%$IDobj%'";
